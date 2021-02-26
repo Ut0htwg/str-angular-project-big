@@ -11,7 +11,7 @@ export class Order {
             this.customerID = properties.customerID || 0;
             this.productID = properties.productID || 0;
             this.amount = properties.amount || 0;
-            this.status = properties.status || '';
+            this.status = properties.status || 'new' || 'shipped' || 'paid';
         }
     }
 }
