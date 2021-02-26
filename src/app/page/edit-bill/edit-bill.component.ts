@@ -4,6 +4,7 @@ import { Bill } from 'app/model/bill';
 import { BillService } from 'app/service/bill.service';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditBillComponent implements OnInit {
 
+  updating: boolean = false;
   bill$: Observable<Bill> = this.activatedRoute.params.pipe(
     switchMap(params => this.billService.get(params.id))
   );
@@ -27,7 +29,8 @@ export class EditBillComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onUpdate(bill: Bill): void {
+  onUpdate(form: NgForm, bill: Bill): void {
+    this.updating = true;
     if (bill.id === 0) {
       this.billService.create(bill);
       this.router.navigate(['bills']);
