@@ -9,7 +9,7 @@ export class Bill {
             this.id = properties.id || 0;
             this.orderID = properties.orderID || 0;
             this.amount = properties.amount || 0;
-            this.status = properties.status || '';
+            this.status = properties.status || 'new' || 'paid';
         }
     }
 }
