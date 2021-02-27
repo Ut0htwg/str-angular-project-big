@@ -772,9 +772,9 @@
     },
     {
       "id": 7,
-      "customerID": 13,
-      "productID": 10,
-      "amount": 64214,
+      "customerID": 24,
+      "productID": 23,
+      "amount": 24554,
       "status": "new"
     },
     {
@@ -937,6 +937,20 @@
       "productID": 29,
       "amount": 2469,
       "status": "paid"
+    },
+    {
+      "id": 31,
+      "customerID": 12,
+      "productID": 12,
+      "amount": 12,
+      "status": "shipped"
+    },
+    {
+      "id": 32,
+      "customerID": 11,
+      "productID": 11,
+      "amount": 11,
+      "status": "shipped"
     }
   ],
   "customers": [

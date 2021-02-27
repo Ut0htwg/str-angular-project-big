@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
@@ -13,13 +13,15 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 // import { EditOrderComponent } from './page/edit-order/edit-order.component';
 import { BillComponent } from './page/bill/bill.component';
 import { EditBillComponent } from './page/edit-bill/edit-bill.component';
+import { OrderComponent } from './page/order/order.component';
+import { EditOrderComponent } from './page/edit-order/edit-order.component';
 
-const routes: Routes =[
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }, 
+  },
   {
     path: '',
     component: AdminLayoutComponent,
@@ -44,14 +46,14 @@ const routes: Routes =[
   //   path: 'customers/:id',
   //   component: EditCustomerComponent
   // },
-  // {
-  //   path: 'orders',
-  //   component: OrderComponent,
-  // },
-  // {
-  //   path: 'orders/:id',
-  //   component: EditOrderComponent,
-  // },
+  {
+    path: 'orders',
+    component: OrderComponent,
+  },
+  {
+    path: 'orders/:id',
+    component: EditOrderComponent,
+  },
   {
     path: 'bills',
     component: BillComponent
@@ -66,8 +68,8 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
-       useHash: true
+    RouterModule.forRoot(routes, {
+      useHash: true
     })
   ],
   exports: [

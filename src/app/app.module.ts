@@ -21,6 +21,10 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { BillComponent } from './page/bill/bill.component';
+import { OrderComponent } from './page/order/order.component';
+import { EditOrderComponent } from './page/edit-order/edit-order.component';
+import { OrderFilterPipe } from './pipes/order-filter.pipe';
+import { SorterPipe } from './pipes/sorter.pipe';
 
 @NgModule({
   imports: [
@@ -46,6 +50,10 @@ import { BillComponent } from './page/bill/bill.component';
     AdminLayoutComponent,
     EditBillComponent,
     BillComponent,
+    OrderComponent,
+    EditOrderComponent,
+    OrderFilterPipe,
+    SorterPipe,
 
   ],
   providers: [],

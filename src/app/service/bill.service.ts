@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BillService {
 
-  apiUrl: string = 'http://localhost:3000/products';
+  apiUrl: string = 'http://localhost:3000/bills';
 
   list: Bill[] = [];
 
