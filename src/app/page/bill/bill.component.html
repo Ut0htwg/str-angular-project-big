@@ -1,8 +1,9 @@
-<div class="main-content">
-    <div class="container mt-5">
-        <form class="form-inline my-4 justify-content-end">
-            <input class="form-control px-1 w-50" (keyup)="onChangePhrase($bill)"
-                type="search" placeholder="Search" aria-label="Search">
+<div class="main-content mt-3">
+    <div class="container">
+        <form class="form-inline mb-5 justify-content-end">
+            <input class="form-control px-1 w-50"
+                (keyup)="onChangePhrase($bill)" type="search"
+                placeholder="Search" aria-label="Search">
         </form>
         <button [routerLink]="['bill/' + 0]"
             class="btn btn-block btn-lg btn-info my-3">
@@ -36,8 +37,7 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        *ngFor="let bill of billList$ | async">
+                                    <tr *ngFor="let bill of billList$ | async">
                                         <td>{{bill.id}}</td>
                                         <td>{{bill.orderID}} </td>
                                         <td>{{bill.amount}}</td>
@@ -47,11 +47,13 @@
                                                 <button
                                                     [routerLink]="['bill/' + bill.id]"
                                                     class="btn btn-success">
-                                                    <i class="material-icons">edit</i>
+                                                    <i
+                                                        class="material-icons">edit</i>
                                                 </button>
                                                 <button class="btn btn-danger"
                                                     (click)="onDelete(bill)">
-                                                    <i class="material-icons">delete_forever</i>
+                                                    <i
+                                                        class="material-icons">delete_forever</i>
                                                 </button>
                                             </div>
                                         </td>
