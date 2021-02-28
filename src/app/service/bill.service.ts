@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Bill } from '../model/bill';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +10,24 @@ export class BillService {
 
   apiUrl: string = 'http://localhost:3000/bills';
 
-  list: Bill[] = [];
+  list$: BehaviorSubject<Bill[]> = new BehaviorSubject<Bill[]>([]);
 
   constructor(private http: HttpClient) {
     this.getAll();
   }
 
-  getAll(): Observable<Bill[]> {
-    return this.http.get<Bill[]>(this.apiUrl);
+  getAll(): void {
+    this.http.get<Bill[]>(this.apiUrl).subscribe(bills => this.list$.next(bills));
   }
 
-  get(bill: Bill): Observable<Bill> {
-    return this.http.get<Bill>(`${this.apiUrl}/${bill.id}`);
+  get(id: number): Observable<Bill> {
+    id = typeof id === 'string' ? parseInt(id, 10) : id;
+    const bill: Bill | undefined = this.list$.value.find(item => item.id === id);
+    if (bill) {
+      return of(bill);
+    }
+
+    return of(new Bill());
   }
 
   update(bill: Bill): Observable<Bill> {
@@ -34,7 +40,7 @@ export class BillService {
     );
   }
 
-  remove(bill: Bill): Observable<Bill> {
-    return this.http.delete<Bill>(`${this.apiUrl}/${bill.id}`);
+  remove(bill: Bill): void {
+    this.http.delete(`${this.apiUrl}/${bill.id}`).subscribe(() => this.getAll())
   }
 }
