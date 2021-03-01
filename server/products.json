@@ -718,13 +718,7 @@
       "id": 28,
       "orderID": 28,
       "amount": 4050,
-      "status": "new"
-    },
-    {
-      "id": 29,
-      "orderID": 29,
-      "amount": 5280,
-      "status": "new"
+      "status": "shipped"
     }
   ],
   "orders": [
