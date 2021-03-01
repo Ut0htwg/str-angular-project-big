@@ -6,7 +6,7 @@ export class Customer {
     lastName: string = "";
     email: string = "";
     address: Address = undefined;
-    active: boolean = true;
+    active: string = "active" || "inactive";
 
     constructor(properties?: Customer) {
         if (properties) {
@@ -15,7 +15,7 @@ export class Customer {
             this.lastName = properties.lastName || "";
             this.email = properties.email || "";
             this.address = properties.address || undefined;
-            this.active = properties.active || true;
+            this.active = properties.active || "";
         }
     }
 }
