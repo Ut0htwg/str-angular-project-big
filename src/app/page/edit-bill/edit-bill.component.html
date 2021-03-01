@@ -1,22 +1,26 @@
 <div class="row">
-    <div *ngIf="(bill$ | async) as bill" class="col-6 offset-3">
-        <form #billForm="ngForm" (ngSubmit)="onUpdate(billform, bill)">
-
+    <div *ngIf="bill" class="col-6 offset-3 mt-5">
+        <form #billForm="ngForm" (ngSubmit)="setBillToDatabase(bill)">
+            <div *ngIf="!updating" class="form-group">
+                <label for="bill">#</label>
+                <input [(ngModel)]="bill.id" id="bill" name="bill" type="number" class="form-control" disabled />
+            </div>
             <div class="form-group">
-                <label for="">OrderID</label>
-                <input name="orderid" [(ngModel)]="bill.orderID" type="number"
-                    class="form-control pl-3" pattern="[0-9]{1,}" required>
-                <div [hidden]="billForm.controls.orderid?.valid"
+                <label for="order">OrderID</label>
+                <input name="order" [(ngModel)]="bill.orderID" type="number"
+                    class="form-control" pattern="[0-9]{1,}" required autofocus>
+                <div [hidden]="billForm.controls.order?.valid || billForm.controls.order?.pristine"
                     class="error-message">
                     The order ID needs to be filled. It must contain only numbers.
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="">Amount</label>
+                <label for="amount">Amount</label>
                 <input name="amount" [(ngModel)]="bill.amount" type="number"
-                    class="form-control pl-3" pattern="[0-9]{1,}" required>
-                <div [hidden]="billForm.controls.amount?.valid"
+                    class="form-control" pattern="[0-9]{1,}" required>
+                <div [hidden]="billForm.controls.amount?.valid ||
+                billForm.controls.amount?.pristine"
                     class="error-message">
                     The order amount needs to be filled. It must contain only numbers.
                 </div>
@@ -24,23 +28,26 @@
 
 
             <div class="form-group">
-                <label for="">Status</label>
-                <select [(ngModel)]="bill.status" class="form-control pl-3" name="status">
-                    <option>New</option>
-                    <option>Paid</option>
-                </select>
+                <label for="status">Status</label>
+                <select [(ngModel)]="bill.status" class="form-control" style="cursor: pointer" id="status" name="status" pattern="^(new|shipped|paid)$">
+                    <option value="new">new</option>
+                    <option value="shipped">shipped</option>
+                    <option value="paid">paid</option>
+                    </select>
+                <div [hidden]="
+              billForm.controls.status?.valid ||
+              billForm.controls.status?.pristine
+            " class="error-message">
+                    Kötelezően kitöltendő mező! Csak new, shipped vagy paid lehet.
+                </div>
             </div>
-
 
             <button [disabled]="billForm.invalid || updating" type="submit"
-                class="btn btn-primary btn-block btn-lg">
-                <span *ngIf="!updating" class="material-icons">save_alt</span>
+                class="btn btn-block btn-info">
+                <i *ngIf="!updating" class="fa fa-save"></i>
 
-                <span *ngIf="updating" class="material-icons save">cached</span>
+                <i *ngIf="updating" class="fa fa-refresh"></i>
             </button>
-            <div [hidden]="billForm.valid" class="error-message">
-                All fields need to be filled!
-            </div>
         </form>
     </div>
 </div>

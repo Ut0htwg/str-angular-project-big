@@ -46,7 +46,7 @@ export class OrderComponent implements OnInit {
   onRemove(order: Order): void {
     of(this.orderService.remove(order.id)).subscribe(
       () => {
-        this.toastr.success('Sikeresen törölted a terméket!', 'Törlés!', { timeOut: 3000 });
+        this.toastr.warning('Sikeresen törölted a terméket!', 'Törlés!', { timeOut: 3000 });
         this.orderService.getAll();
       },
       error => this.toastr.error('Hiba történt a termék törlésekor!', 'Hiba!', { timeOut: 3000 })

@@ -1,7 +1,7 @@
 <div class="main-content mt-3">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="d-flex mb-3 col-6 offset-6 mt-3">
+            <div class="d-flex mb-3 col-6 offset-6">
                 <div class="col-md-3">
                     <select [(ngModel)]="phraseKey" class="custom-select">
                         <option value="">find all</option>
@@ -10,9 +10,8 @@
                         </option>
                     </select>
                 </div>
-                <div class="input-group-prepend"></div>
-                <input [(ngModel)]="txt" class="form-control" type="text"
-                    placeholder="search...">
+                <input [(ngModel)]="txt" class="form-control px-1" type="search"
+                    placeholder="Search" aria-label="Search">
             </div>
         </div>
 
@@ -33,64 +32,77 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead class="text-default text-center">
-                                    <tr>
-                                        <th class="text-center"
-                                            (click)="onColumnSelect('id')">#
-                                            <i *ngIf="columnKey !== 'id'"
-                                                class="material-icons align-text-bottom text-info">indeterminate_check_box</i>
-                                            <i *ngIf="columnKey === 'id' && direction === 'asc'"
-                                                class="material-icons align-text-top">keyboard_arrow_down</i>
-                                            <i *ngIf="columnKey === 'id' && direction === 'dsc'"
-                                                class="material-icons align-text-bottom">keyboard_arrow_up</i>
-                                        </th>
-                                        <th class="text-center"
-                                            (click)="onColumnSelect('customerID')">
-                                            CustomerID
-                                            <i *ngIf="columnKey !== 'customerID'"
-                                                class="material-icons align-text-bottom text-info">indeterminate_check_box</i>
-                                            <i *ngIf="columnKey === 'customerID' && direction === 'asc'"
-                                                class="material-icons align-text-top">keyboard_arrow_down</i>
-                                            <i *ngIf="columnKey === 'customerID' && direction === 'dsc'"
-                                                class="material-icons align-text-bottom">keyboard_arrow_up</i>
-                                        </th>
-                                        <th class="text-center"
-                                            (click)="onColumnSelect('productID')">
-                                            ProductID
-                                            <i *ngIf="columnKey !== 'productID'"
-                                                class="material-icons align-text-bottom text-info">indeterminate_check_box</i>
-                                            <i *ngIf="columnKey === 'productID' && direction === 'asc'"
-                                                class="material-icons align-text-top">keyboard_arrow_down</i>
-                                            <i *ngIf="columnKey === 'productID' && direction === 'dsc'"
-                                                class="material-icons align-text-bottom">keyboard_arrow_up</i>
-                                        </th>
-                                        <th class="text-center"
-                                            (click)="onColumnSelect('amount')">
-                                            Amount
-                                            <i *ngIf="columnKey !== 'amount'"
-                                                class="material-icons align-text-bottom text-info">indeterminate_check_box</i>
-                                            <i *ngIf="columnKey === 'amount' && direction === 'asc'"
-                                                class="material-icons align-text-top">keyboard_arrow_down</i>
-                                            <i *ngIf="columnKey === 'amount' && direction === 'dsc'"
-                                                class="material-icons align-text-bottom">keyboard_arrow_up</i>
-                                        </th>
-                                        <th class="text-center"
-                                            (click)="onColumnSelect('status')">
-                                            Status
-                                            <i *ngIf="columnKey !== 'status'"
-                                                class="material-icons align-text-bottom text-info">indeterminate_check_box</i>
-                                            <i *ngIf="columnKey === 'status' && direction === 'asc'"
-                                                class="material-icons align-text-top">keyboard_arrow_down</i>
-                                            <i *ngIf="columnKey === 'status' && direction === 'dsc'"
-                                                class="material-icons align-text-bottom">keyboard_arrow_up</i>
-                                        </th>
-                                        <th class="text-center">Actions</th>
-                                    </tr>
+                            <table class="table table-hover">
+                                <thead class="text-center">
+                                    <th class="text-center"
+                                        (click)="onColumnSelect('id')">#
+                                        <i *ngIf="columnKey !== 'id'"
+                                            class="material-icons align-text-bottom text-info"
+                                            style="cursor: pointer">indeterminate_check_box</i>
+                                        <i *ngIf="columnKey === 'id' && direction === 'asc'"
+                                            class="material-icons align-text-top"
+                                            style="cursor: pointer">keyboard_arrow_down</i>
+                                        <i *ngIf="columnKey === 'id' && direction === 'dsc'"
+                                            class="material-icons align-text-bottom"
+                                            style="cursor: pointer">keyboard_arrow_up</i>
+                                    </th>
+                                    <th class="text-center"
+                                        (click)="onColumnSelect('customerID')">
+                                        CustomerID
+                                        <i *ngIf="columnKey !== 'customerID'"
+                                            class="material-icons align-text-bottom text-info"
+                                            style="cursor: pointer">indeterminate_check_box</i>
+                                        <i *ngIf="columnKey === 'customerID' && direction === 'asc'"
+                                            class="material-icons align-text-top"
+                                            style="cursor: pointer">keyboard_arrow_down</i>
+                                        <i *ngIf="columnKey === 'customerID' && direction === 'dsc'"
+                                            class="material-icons align-text-bottom"
+                                            style="cursor: pointer">keyboard_arrow_up</i>
+                                    </th>
+                                    <th class="text-center"
+                                        (click)="onColumnSelect('productID')">
+                                        ProductID
+                                        <i *ngIf="columnKey !== 'productID'"
+                                            class="material-icons align-text-bottom text-info"
+                                            style="cursor: pointer">indeterminate_check_box</i>
+                                        <i *ngIf="columnKey === 'productID' && direction === 'asc'"
+                                            class="material-icons align-text-top"
+                                            style="cursor: pointer">keyboard_arrow_down</i>
+                                        <i *ngIf="columnKey === 'productID' && direction === 'dsc'"
+                                            class="material-icons align-text-bottom"
+                                            style="cursor: pointer">keyboard_arrow_up</i>
+                                    </th>
+                                    <th class="text-center"
+                                        (click)="onColumnSelect('amount')">
+                                        Amount
+                                        <i *ngIf="columnKey !== 'amount'"
+                                            class="material-icons align-text-bottom text-info"
+                                            style="cursor: pointer">indeterminate_check_box</i>
+                                        <i *ngIf="columnKey === 'amount' && direction === 'asc'"
+                                            class="material-icons align-text-top"
+                                            style="cursor: pointer">keyboard_arrow_down</i>
+                                        <i *ngIf="columnKey === 'amount' && direction === 'dsc'"
+                                            class="material-icons align-text-bottom"
+                                            style="cursor: pointer">keyboard_arrow_up</i>
+                                    </th>
+                                    <th class="text-center"
+                                        (click)="onColumnSelect('status')">
+                                        Status
+                                        <i *ngIf="columnKey !== 'status'"
+                                            class="material-icons align-text-bottom text-info"
+                                            style="cursor: pointer">indeterminate_check_box</i>
+                                        <i *ngIf="columnKey === 'status' && direction === 'asc'"
+                                            class="material-icons align-text-top"
+                                            style="cursor: pointer">keyboard_arrow_down</i>
+                                        <i *ngIf="columnKey === 'status' && direction === 'dsc'"
+                                            class="material-icons align-text-bottom"
+                                            style="cursor: pointer">keyboard_arrow_up</i>
+                                    </th>
+                                    <th class="text-center">Actions</th>
                                 </thead>
                                 <tbody>
                                     <tr
-                                        *ngFor="let order of orderList$ | async | orderFilter:txt:phraseKey | sorter:direction:columnKey">
+                                        *ngFor="let order of orderList$ | async | filter:txt:phraseKey | sorter:direction:columnKey">
                                         <td class="text-center">{{ order.id }}
                                         </td>
                                         <td class="text-center">{{
@@ -110,7 +122,7 @@
                                                 <button class="btn btn-success"
                                                     [routerLink]="[order.id]">
                                                     <i
-                                                        class="material-icons">mode_edit</i>
+                                                        class="material-icons">edit</i>
                                                 </button>
                                                 <button class="btn btn-danger"
                                                     (click)="onRemove(order)">
