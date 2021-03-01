@@ -1,1 +1,69 @@
-<p>bill works!</p>
+<div class="main-content mt-3">
+    <div class="container">
+        <form class="form-inline mb-5 justify-content-end">
+            <input class="form-control px-1 w-50"
+                (keyup)="onChangePhrase($bill)" type="search"
+                placeholder="Search" aria-label="Search">
+        </form>
+        <button [routerLink]="['bill/' + 0]"
+            class="btn btn-block btn-lg btn-info my-3">
+            <span class="material-icons mr-3">
+                add_task
+            </span>
+            Create new bill
+        </button>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h2 class="card-title">Bills</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead style="cursor: pointer">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        OrderID
+                                    </th>
+                                    <th>
+                                        Amount
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let bill of billList$ | async">
+                                        <td>{{bill.id}}</td>
+                                        <td>{{bill.orderID}} </td>
+                                        <td>{{bill.amount}}</td>
+                                        <td>{{bill.status}}</td>
+                                        <td class="d-flex justify-content-end">
+                                            <div class="btn-group">
+                                                <button
+                                                    [routerLink]="['bill/' + bill.id]"
+                                                    class="btn btn-success">
+                                                    <i
+                                                        class="material-icons">edit</i>
+                                                </button>
+                                                <button class="btn btn-danger"
+                                                    (click)="onDelete(bill)">
+                                                    <i
+                                                        class="material-icons">delete_forever</i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
