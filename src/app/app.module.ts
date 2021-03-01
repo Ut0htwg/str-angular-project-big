@@ -23,7 +23,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BillComponent } from './page/bill/bill.component';
 import { OrderComponent } from './page/order/order.component';
 import { EditOrderComponent } from './page/edit-order/edit-order.component';
-import { OrderFilterPipe } from './pipes/order-filter.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 import { SorterPipe } from './pipes/sorter.pipe';
 
 @NgModule({
@@ -52,7 +52,7 @@ import { SorterPipe } from './pipes/sorter.pipe';
     BillComponent,
     OrderComponent,
     EditOrderComponent,
-    OrderFilterPipe,
+    FilterPipe,
     SorterPipe,
 
   ],
