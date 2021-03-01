@@ -43,7 +43,7 @@ export class EditCustomerComponent implements OnInit {
       this.customerService.get(params.id).subscribe((customer) => {
         console.log(customer);
         this.customer = customer || new Customer();
-        this.customer.active = this.customer.id ? this.customer.active : 'new';
+        this.customer.active = this.customer.id ? this.customer.active : 'active';
       })
     );
     this.chosenCustomer.id = this.customer.id;
