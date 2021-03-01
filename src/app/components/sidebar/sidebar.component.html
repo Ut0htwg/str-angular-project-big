@@ -1,7 +1,6 @@
 <div class="logo">
     <div class="logo-img">
-        <img src="../../assets/img/logo-squadronbooks.png"
-            alt="Squadron books logo"/>
+        <img src="../../assets/img/logo-squadronbooks.png" alt="Squadron books logo" />
     </div>
     <a href="#" class="simple-text">
         squadron books
@@ -13,8 +12,7 @@
         </ul>
     </div>
     <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems"
-            class="{{menuItem.class}} nav-item">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>

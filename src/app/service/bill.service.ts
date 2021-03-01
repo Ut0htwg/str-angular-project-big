@@ -26,6 +26,18 @@ export class BillService {
     return this.http.get<Bill>(`${this.billApiUrl}/${id}`);
   }
 
+  // update(bill: Bill): Observable<Bill> {
+  //   return this.http
+  //     .patch<Bill>(`${this.billApiUrl}/${bill.id}`, bill)
+  //     .pipe(tap(() => this.getAll()));
+  // }
+
+  // create(bill: Bill): Observable<Bill> {
+  //   return this.http
+  //     .patch<Bill>(`${this.billApiUrl}/${bill.id}`, bill)
+  //     .pipe(tap(() => this.getAll()));
+  // }
+
   update(bill: Bill): Observable<Bill> {
     return this.http
       .patch<Bill>(`${this.billApiUrl}/${bill.id}`, bill)
@@ -33,10 +45,9 @@ export class BillService {
   }
 
   create(bill: Bill): Observable<Bill> {
-    return this.http
-      .patch<Bill>(`${this.billApiUrl}/${bill.id}`, bill)
-      .pipe(tap(() => this.getAll()));
+    return this.http.post<Bill>(this.billApiUrl, bill);
   }
+
 
   remove(id: number | string): void {
     id = parseInt(('' + id), 10);
