@@ -27,6 +27,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SorterPipe } from './pipes/sorter.pipe';
 import { CustomerComponent } from './page/customer/customer.component';
 import { EditCustomerComponent } from './page/edit-customer/edit-customer.component';
+import { ProductComponent } from './page/product/product.component';
+import { EditProductComponent } from './page/edit-product/edit-product.component';
 
 @NgModule({
   imports: [
@@ -58,6 +60,8 @@ import { EditCustomerComponent } from './page/edit-customer/edit-customer.compon
     SorterPipe,
     CustomerComponent,
     EditCustomerComponent,
+    ProductComponent,
+    EditProductComponent,
 
   ],
   providers: [],

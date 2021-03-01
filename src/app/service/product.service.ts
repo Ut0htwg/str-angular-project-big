@@ -1,49 +1,61 @@
-import { Injectable } from '@angular/core';
-import { Product } from '../model/product';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Product } from '../model/product';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  apiUrl: string = 'http://localhost:3000/products';
+  productApiUrl: string = 'http://localhost:3000/products';
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
+  // productList: Observable<Product[]> = this.productService.getAll();
 
-  constructor(private http: HttpClient) {
-    this.getAll();
-  }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getAll(): void {
-    this.http.get<Product[]>(this.apiUrl).subscribe(
-      product => this.list$.next(product)
+    this.http.get<Product[]>(this.productApiUrl).subscribe(
+      products => this.list$.next(products)
     );
   }
 
-  get(id: number): Observable<Product> {
-    id = typeof id === 'string' ? parseInt(id, 10) : id;
-    const product: Product | undefined = this.list$.value.find(item => item.id === id);
-    if (product) {
-      return of(product);
-    }
-    return of(new Product());
+  get(id: number | string): Observable<Product> {
+    id = parseInt(('' + id), 10);
+    return this.http.get<Product>(`${this.productApiUrl}/${id}`);
+  }
+
+  // create(product: Product): void {
+  //   this.http.post<Product>(this.productApiUrl, product).subscribe(
+  //     () => this.getAll()
+  //   );
+  // }
+
+  // update(product: Product): void {
+  //   this.http.patch<Product>(`${this.productApiUrl}/${product.id}`, product).subscribe(
+  //     () => this.getAll()
+  //   );
+  // }
+
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.productApiUrl, product);
   }
 
   update(product: Product): Observable<Product> {
-    return this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product);
+    return this.http
+      .patch<Product>(`${this.productApiUrl}/${product.id}`, product)
+      .pipe(tap(() => this.getAll()));
+
   }
 
-  create(product: Product): void {
-    this.http.post<Product>(`${this.apiUrl}`, product).subscribe(
+  remove(id: number | string): void {
+    id = parseInt(('' + id), 10);
+    this.http.delete<Product>(`${this.productApiUrl}/${id}`).subscribe(
       () => this.getAll()
     );
   }
 
-  remove(product: Product): void {
-    this.http.delete<Product>(`${this.apiUrl}/${product.id}`).subscribe(
-      () => this.getAll()
-    );
-  }
 }
