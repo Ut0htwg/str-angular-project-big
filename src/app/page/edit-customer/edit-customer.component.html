@@ -6,6 +6,7 @@
         <input [(ngModel)]="customer.id" id="customerID" name="customerID" type="number" class="form-control"
           disabled />
       </div>
+
       <div class="form-group">
         <label for="firstname">First name</label>
         <input name="firstname" [(ngModel)]="customer.firstName" type="text" class="form-control pl-3" pattern=""
@@ -51,6 +52,9 @@
           " class="error-message">
           You must enter a valid zip or postal code.
         </div>
+      </div>
+
+      <div class="form-group">
         <input name="country" [(ngModel)]="customer.address.country" type="text" class="form-control pl-3" pattern=""
           placeholder="Country" required />
         <div [hidden]="
@@ -59,6 +63,9 @@
           " class="error-message">
           You must enter a valid country.
         </div>
+      </div>
+
+      <div class="form-group">
         <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control pl-3" pattern=""
           placeholder="City" required />
         <div [hidden]="
@@ -67,6 +74,9 @@
           " class="error-message">
           You must enter a valid city.
         </div>
+      </div>
+
+      <div class="form-group">
         <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control pl-3" pattern=""
           placeholder="Street" required />
         <div [hidden]="
@@ -75,13 +85,16 @@
           " class="error-message">
           You must enter a valid street address.
         </div>
+      </div>
 
+      <div class="form-group">
         <input name="notes" [(ngModel)]="customer.address.notes" type="text" class="form-control pl-3" pattern=""
           placeholder="Notes" />
         <div [hidden]="customerForm.controls.notes?.valid" class="error-message">
           You must enter valid notes.
         </div>
       </div>
+
 
       <div class="form-group">
         <label for="active">Active</label>
@@ -90,7 +103,6 @@
           <option value="active">active</option>
           <option value="inactive">inactive</option>
         </select>
-
         <div [hidden]="
             customerForm.controls.active?.valid ||
             customerForm.controls.active?.pristine
