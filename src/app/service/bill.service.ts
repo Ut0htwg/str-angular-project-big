@@ -1,46 +1,47 @@
 import { Injectable } from '@angular/core';
 import { Bill } from '../model/bill';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BillService {
 
-  apiUrl: string = 'http://localhost:3000/bills';
+  billApiUrl: string = 'http://localhost:3000/bills';
 
   list$: BehaviorSubject<Bill[]> = new BehaviorSubject<Bill[]>([]);
 
-  constructor(private http: HttpClient) {
-    this.getAll();
-  }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getAll(): void {
-    this.http.get<Bill[]>(this.apiUrl).subscribe(bills => this.list$.next(bills));
+    this.http.get<Bill[]>(this.billApiUrl).subscribe(bills => this.list$.next(bills));
   }
 
-  get(id: number): Observable<Bill> {
-    id = typeof id === 'string' ? parseInt(id, 10) : id;
-    const bill: Bill | undefined = this.list$.value.find(item => item.id === id);
-    if (bill) {
-      return of(bill);
-    }
-
-    return of(new Bill());
+  get(id: number | string): Observable<Bill> {
+    id = parseInt(('' + id), 10);
+    return this.http.get<Bill>(`${this.billApiUrl}/${id}`);
   }
 
   update(bill: Bill): Observable<Bill> {
-    return this.http.patch<Bill>(`${this.apiUrl}/${bill.id}`, bill);
+    return this.http
+      .patch<Bill>(`${this.billApiUrl}/${bill.id}`, bill)
+      .pipe(tap(() => this.getAll()));
   }
 
-  create(bill: Bill): void {
-    this.http.post<Bill>(`${this.apiUrl}`, bill).subscribe(
+  create(bill: Bill): Observable<Bill> {
+    return this.http
+      .patch<Bill>(`${this.billApiUrl}/${bill.id}`, bill)
+      .pipe(tap(() => this.getAll()));
+  }
+
+  remove(id: number | string): void {
+    id = parseInt(('' + id), 10);
+    this.http.delete<Bill>(`${this.billApiUrl}/${id}`).subscribe(
       () => this.getAll()
     );
-  }
-
-  remove(bill: Bill): void {
-    this.http.delete(`${this.apiUrl}/${bill.id}`).subscribe(() => this.getAll())
   }
 }

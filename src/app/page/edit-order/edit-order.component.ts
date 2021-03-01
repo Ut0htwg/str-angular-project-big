@@ -54,7 +54,7 @@ export class EditOrderComponent implements OnInit {
     return `${customer.firstName} ${customer.lastName}`;
   }
 
-  customerIputFormatter(customer: Customer): string {
+  customerInputFormatter(customer: Customer): string {
     if (!customer.id) {
       return '';
     }
