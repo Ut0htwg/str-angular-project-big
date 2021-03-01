@@ -1,0 +1,213 @@
+<div class="row">
+  <div *ngIf="customer" class="col-6 offset-3 mt-5">
+    <form #customerForm="ngForm" (ngSubmit)="setCustomerToDatabase(customer)">
+      <div *ngIf="!updating" class="form-group">
+        <label for="customerID">Customer ID</label>
+        <input
+          [(ngModel)]="customer.id"
+          id="customerID"
+          name="customerID"
+          type="number"
+          class="form-control"
+          disabled
+        />
+      </div>
+      <div class="form-group">
+        <label for="firstname">First name</label>
+        <input
+          name="firstname"
+          [(ngModel)]="customer.firstname"
+          type="text"
+          class="form-control pl-3"
+          pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.firstname?.valid ||
+            customerForm.controls.firstname?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid first name.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="">Last name</label>
+        <input
+          name="lastname"
+          [(ngModel)]="customer.lastname"
+          type="text"
+          class="form-control pl-3"
+          pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.lastname?.valid ||
+            customerForm.controls.lastname?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid last name.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="">E-mail</label>
+        <input
+          name="email"
+          [(ngModel)]="customer.email"
+          type="email"
+          class="form-control pl-3"
+          pattern=""
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.email?.valid ||
+            customerForm.controls.email?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid e-mail address.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="">Address</label>
+        <input
+          name="zip"
+          [(ngModel)]="customer.zip"
+          type="number"
+          class="form-control pl-3"
+          pattern="[0-9]{1,}"
+          placeholder="Zip or postal code"
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.zip?.valid ||
+            customerForm.controls.zip?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid zip or postal code.
+        </div>
+        <input
+          name="country"
+          [(ngModel)]="customer.country"
+          type="text"
+          class="form-control pl-3"
+          pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
+          placeholder="Country"
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.country?.valid ||
+            customerForm.controls.country?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid country.
+        </div>
+        <input
+          name="city"
+          [(ngModel)]="customer.city"
+          type="text"
+          class="form-control pl-3"
+          pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
+          placeholder="City"
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.city?.valid ||
+            customerForm.controls.city?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid city.
+        </div>
+        <input
+          name="street"
+          [(ngModel)]="customer.street"
+          type="text"
+          class="form-control pl-3"
+          pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
+          placeholder="Street"
+          required
+        />
+        <div
+          [hidden]="
+            customerForm.controls.street?.valid ||
+            customerForm.controls.street?.pristine
+          "
+          class="error-message"
+        >
+          You must enter a valid street address.
+        </div>
+
+        <input
+          name="notes"
+          [(ngModel)]="customer.notes"
+          type="text"
+          class="form-control pl-3"
+          pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
+          placeholder="Notes"
+        />
+        <div
+          [hidden]="customerForm.controls.notes?.valid"
+          class="error-message"
+        >
+          You must enter valid notes.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="active">Status</label>
+        <select
+          [(ngModel)]="customer.active"
+          class="form-control"
+          id="active"
+          name="active"
+          pattern="^(active|inactive)$"
+        >
+          <option value="active">active</option>
+          <option value="inactive">inactive</option>
+        </select>
+
+        <div
+          [hidden]="
+            customerForm.controls.active?.valid ||
+            customerForm.controls.active?.pristine
+          "
+          class="error-message"
+        >
+          You must choose customer status "active" or "inactive".
+        </div>
+      </div>
+
+      <!--MATERIAL ICON vagy FAV ICON a SAVE GOMBON?-->
+
+      <!-- <button
+          [disabled]="customerForm.invalid || updating" type="submit"
+          class="btn btn-block btn-info"
+        >
+          <i *ngIf="!updating" class="material-icons">save_alt</i>
+          <i *ngIf="updating" class="material-icons save">cached</i>
+        </button> -->
+
+      <button
+        [disabled]="customerForm.invalid || updating"
+        type="submit"
+        class="btn btn-block btn-info"
+      >
+        <i *ngIf="!updating" class="fa fa-save"></i>
+        <i *ngIf="updating" class="fa fa-refresh"></i>
+      </button>
+    </form>
+  </div>
+</div>
