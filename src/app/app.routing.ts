@@ -6,8 +6,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 // import { ProductComponent } from './page/product/product.component';
 // import { EditProductComponent } from './page/edit-product/edit-product.component';
-// import { CustomerComponent } from './page/customer/customer.component';
-// import { EditCustomerComponent } from './page/edit-customer/edit-customer.component';
+import { CustomerComponent } from './page/customer/customer.component';
+import { EditCustomerComponent } from './page/edit-customer/edit-customer.component';
 import { OrderComponent } from './page/order/order.component';
 import { EditOrderComponent } from './page/edit-order/edit-order.component';
 import { BillComponent } from './page/bill/bill.component';
@@ -35,14 +35,14 @@ const routes: Routes = [
   //   path: 'products/:id',
   //   component: EditProductComponent
   // },
-  //  {
-  //    path: 'customers',
-  //    component: CustomerComponent
-  //  },
-  //  {
-  //    path: 'customers/:id',
-  //    component: EditCustomerComponent
-  //  },
+  {
+    path: 'customers',
+    component: CustomerComponent
+  },
+  {
+    path: 'customers/:id',
+    component: EditCustomerComponent
+  },
   {
     path: 'orders',
     component: OrderComponent,
