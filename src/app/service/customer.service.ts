@@ -9,75 +9,37 @@ import { tap } from 'rxjs/operators';
 })
 export class CustomerService {
 
-  customerapiUrl: string = 'http://localhost:3000/customers';
+  customerApiUrl: string = 'http://localhost:3000/customers';
 
   list$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
 
 
-  constructor(private http: HttpClient,) { }
-
-  // getAll(): Observable<Customer[]> {
-  //   return this.http.get<Customer[]>(this.customerapiUrl);
-  // }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getAll(): void {
-    this.http.get<Customer[]>(this.customerapiUrl).subscribe(customers => this.list$.next(customers));
+    this.http.get<Customer[]>(this.customerApiUrl).subscribe(customers => this.list$.next(customers));
   }
-
-  /*   get(customer: Customer): Observable<Customer> {
-      return this.http.get<Customer>(`${this.customerapiUrl}/${customer.id}`);
-    } */
 
   get(id: number | string): Observable<Customer> {
-    id = parseInt(("" + id), 10);
-    return this.http.get<Customer>(`${this.customerapiUrl}/${id}`);
+    id = parseInt(('' + id), 10);
+    return this.http.get<Customer>(`${this.customerApiUrl}/${id}`);
   }
-
-  /*   create(customer: Customer): void {
-      this.http.post<Customer>(`${this.customerapiUrl}`, customer).subscribe(
-        () => this.getAll()
-      );
-    } */
-
-  // create(customer: Customer): Observable<Customer> {
-  //   return this.http.post<Customer>(this.customerapiUrl, customer);
-  // }
-
-  // create(customer: Customer): Observable<Customer> {
-  //   return this.http
-  //     .patch<Customer>(`${this.customerapiUrl}/${customer.id}`, customer)
-  //     .pipe(tap(() => this.getAll()));
-  // }
 
   create(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.customerapiUrl, customer);
+    return this.http.post<Customer>(this.customerApiUrl, customer);
   }
-
-  /*   update(customer: Customer): Observable<Customer> {
-      return this.http.patch<Customer>(`${this.customerapiUrl}/${customer.id}`, customer);
-    } */
-
-  // update(customer: Customer): Observable<Customer> {
-  //   return this.http
-  //     .patch<Customer>(`${this.customerapiUrl}/${customer.id}`, customer)
-  //     .pipe(tap(() => this.getAll()));
-
-  // }
 
   update(customer: Customer): Observable<Customer> {
     return this.http
-      .patch<Customer>(`${this.customerapiUrl}/${customer.id}`, customer)
+      .patch<Customer>(`${this.customerApiUrl}/${customer.id}`, customer)
       .pipe(tap(() => this.getAll()));
   }
 
-
-  /*   remove(customer: Customer): Observable<Customer> {
-      return this.http.delete<Customer>(`${this.customerapiUrl}/${customer.id}`);
-    } */
-
   remove(id: number | string): void {
-    id = parseInt(("" + id), 10);
-    this.http.delete<Customer>(`${this.customerapiUrl}/${id}`).subscribe(
+    id = parseInt(('' + id), 10);
+    this.http.delete<Customer>(`${this.customerApiUrl}/${id}`).subscribe(
       () => this.getAll()
     );
   }

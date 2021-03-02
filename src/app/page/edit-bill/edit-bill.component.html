@@ -29,10 +29,10 @@
 
             <div class="form-group">
                 <label for="status">Status</label>
-                <select [(ngModel)]="bill.status" class="form-control" style="cursor: pointer" id="status" name="status" pattern="^(new|paid)$">
+                <select [(ngModel)]="bill.status" class="form-control" style="cursor: pointer" id="status" name="status" pattern="^(new|paid)$" required>
                     <option value="new">new</option>
                     <option value="paid">paid</option>
-                    </select>
+                </select>
                 <div [hidden]="
               billForm.controls.status?.valid ||
               billForm.controls.status?.pristine

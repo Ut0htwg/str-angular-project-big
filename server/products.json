@@ -553,18 +553,6 @@
   ],
   "bills": [
     {
-      "id": 1,
-      "orderID": 1,
-      "amount": 1523,
-      "status": "paid"
-    },
-    {
-      "id": 2,
-      "orderID": 2,
-      "amount": 8654,
-      "status": "paid"
-    },
-    {
       "id": 3,
       "orderID": 3,
       "amount": 6574,
@@ -718,19 +706,25 @@
       "id": 28,
       "orderID": 28,
       "amount": 4050,
-      "status": "shipped"
+      "status": "new"
     },
     {
       "id": 29,
-      "orderID": 8,
-      "amount": 8,
+      "orderID": 29,
+      "amount": 5280,
       "status": "new"
     },
     {
       "id": 30,
-      "orderID": 11,
-      "amount": 11,
-      "status": "shipped"
+      "orderID": 0,
+      "amount": 0,
+      "status": "new"
+    },
+    {
+      "id": 31,
+      "orderID": 1,
+      "amount": 2,
+      "status": "new"
     }
   ],
   "orders": [
@@ -778,9 +772,9 @@
     },
     {
       "id": 7,
-      "customerID": 13,
-      "productID": 10,
-      "amount": 64214,
+      "customerID": 24,
+      "productID": 23,
+      "amount": 24554,
       "status": "new"
     },
     {
@@ -943,23 +937,23 @@
       "productID": 29,
       "amount": 2469,
       "status": "paid"
+    },
+    {
+      "id": 31,
+      "customerID": 12,
+      "productID": 12,
+      "amount": 12,
+      "status": "shipped"
+    },
+    {
+      "id": 32,
+      "customerID": 11,
+      "productID": 11,
+      "amount": 11,
+      "status": "shipped"
     }
   ],
   "customers": [
-    {
-      "id": 1,
-      "firstName": "Béla",
-      "lastName": "Kiss",
-      "email": "kissbela@gmail.com",
-      "address": {
-        "zip": 1022,
-        "country": "Magyarország",
-        "city": "Budapest",
-        "street": "Petőfi utca 3.",
-        "notes": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
-      },
-      "active": false
-    },
     {
       "id": 2,
       "firstName": "István",
@@ -1339,20 +1333,6 @@
       "active": true
     },
     {
-      "id": 29,
-      "firstName": "Anna",
-      "lastName": "Szentmihályi",
-      "email": "annasz@gmail.com",
-      "address": {
-        "zip": 1676,
-        "country": "Magyarország",
-        "city": "Budapest",
-        "street": "Szép utca 32.",
-        "notes": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy."
-      },
-      "active": true
-    },
-    {
       "id": 30,
       "firstName": "Ferenc",
       "lastName": "Tardos",
@@ -1363,6 +1343,90 @@
         "city": "Budapest",
         "street": "Váci utca 34.",
         "notes": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit."
+      },
+      "active": true
+    },
+    {
+      "id": 31,
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "active": "active"
+    },
+    {
+      "id": 33,
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "active": "active"
+    },
+    {
+      "id": 34,
+      "firstName": "Fú",
+      "lastName": "Fü",
+      "email": "guohio@hljoi.com",
+      "address": {
+        "zip": 6789,
+        "country": "Ko",
+        "city": "Ko",
+        "street": "Kő u. 9.",
+        "notes": "k"
+      },
+      "active": true
+    },
+    {
+      "id": 35,
+      "firstName": "Fú",
+      "lastName": "Fü",
+      "email": "guohio@hljoi.com",
+      "address": {
+        "zip": 5678,
+        "country": "Ko",
+        "city": "Ko",
+        "street": "Kő u. 9.",
+        "notes": "g"
+      },
+      "active": true
+    },
+    {
+      "id": 36,
+      "firstName": "Fá",
+      "lastName": "Fü",
+      "email": "guohio@hljoi.com",
+      "address": {
+        "zip": 1234,
+        "country": "Ko",
+        "city": "Ko",
+        "street": "Kő u. 9.",
+        "notes": "hkljio"
+      },
+      "active": true
+    },
+    {
+      "id": 37,
+      "firstName": "Khgkjh",
+      "lastName": "Kguhi",
+      "email": "pityu@freemail.hu",
+      "address": {
+        "zip": 1213,
+        "country": "Magyarország",
+        "city": "Szeged",
+        "street": "Arany J. utca 4.",
+        "notes": "jjo"
+      },
+      "active": true
+    },
+    {
+      "id": 38,
+      "firstName": "Lo",
+      "lastName": "Hu",
+      "email": "pityu@freemail.hu",
+      "address": {
+        "zip": 1213,
+        "country": "Magyarország",
+        "city": "Szeged",
+        "street": "Arany J. utca 4.",
+        "notes": "hiji"
       },
       "active": true
     }

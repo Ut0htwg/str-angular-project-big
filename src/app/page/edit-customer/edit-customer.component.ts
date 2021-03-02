@@ -5,22 +5,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Customer } from '../../model/customer';
+import { Order } from '../../model/order';
 import { CustomerService } from '../../service/customer.service';
 import { debounceTime, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-edit-customer',
   templateUrl: './edit-customer.component.html',
-  styleUrls: ['./edit-customer.component.css']
+  styleUrls: ['./edit-customer.component.css'],
 })
 export class EditCustomerComponent implements OnInit {
   customer: Customer = new Customer();
   updating: boolean = false;
 
-  chosenCustomer: Customer = new Customer();
+  chosenOrder: Order = new Order();
 
-  entityName: string = 'customer';
-  list$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
+  entityName: string = 'order';
+  list$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
   constructor(
     private customerService: CustomerService,
@@ -35,7 +36,7 @@ export class EditCustomerComponent implements OnInit {
   search = (text$: Observable<string>) =>
     text$.pipe(
       debounceTime(300),
-      switchMap((txt) => this.like('firstName', txt))
+      switchMap((txt) => this.like('id', txt))
     );
 
   ngOnInit(): void {
@@ -43,27 +44,27 @@ export class EditCustomerComponent implements OnInit {
       this.customerService.get(params.id).subscribe((customer) => {
         console.log(customer);
         this.customer = customer || new Customer();
-        this.customer.active = this.customer.id ? this.customer.active : 'active';
+        this.customer.active = this.customer.id ? this.customer.active : true;
       })
     );
-    this.chosenCustomer.id = this.customer.id;
+    this.chosenOrder.id = this.customer.orderID;
   }
 
-  customerResultFormatter(customer: Customer): string {
-    return `${customer.firstName} ${customer.lastName}`;
+  orderResultFormatter(order: Order): string {
+    return `${order.id}`;
   }
 
-  customerIputFormatter(customer: Customer): string {
-    if (!customer.id) {
+  orderInputFormatter(order: Order): string {
+    if (!order.id) {
       return '';
     }
-    return `(${customer.id}) ${customer.firstName} ${customer.lastName}`;
+    return `(${order.id})`;
   }
 
-  like(key: string, value: string, limit: number = 10): Observable<Customer[]> {
+  like(key: string, value: string, limit: number = 10): Observable<Order[]> {
     key = `${key}_like`;
-    const query = `${this.customerService.customerapiUrl}/${this.entityName}?${key}=${value}&_limit=${limit}`;
-    return this.http.get<Customer[]>(query);
+    const query = `${this.customerService.customerApiUrl}/${this.entityName}?${key}=${value}&_limit=${limit}`;
+    return this.http.get<Order[]>(query);
   }
 
   onFormSubmit(form: NgForm): void {
@@ -73,34 +74,35 @@ export class EditCustomerComponent implements OnInit {
       .subscribe(() => this.router.navigate(['customers']));
   }
 
+
   setCustomerToDatabase(customer: Customer): void {
     this.updating = true;
     customer.id = Number(customer.id);
     if (customer.id === 0) {
       this.customerService.create(customer).subscribe(
         () => {
-          this.toastr.success('You have successfully added a customer.', 'Siker!', {
+          this.toastr.success('You have successfully added a customer.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['customers']);
         },
         (error) =>
-          this.toastr.error('There has been an error. The customer is not added.', 'Hiba!', {
+          this.toastr.error('There has been an error. The customer is not added.', 'Error!', {
             timeOut: 3000,
           })
       );
     } else {
       this.customerService.update(customer).subscribe(
         () => {
-          this.toastr.success('You have successfully updated the customer.', 'Siker!', {
+          this.toastr.success('You have successfully updated the customer.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['customers']);
         },
         (error) =>
-          this.toastr.error('There has been an error. The customer is not updated.', 'Hiba!', {
+          this.toastr.error('There has been an error. The customer is not updated.', 'Error!', {
             timeOut: 3000,
           })
       );

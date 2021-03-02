@@ -11,7 +11,7 @@ export class Address {
             this.country = properties.country || "";
             this.city = properties.city || "";
             this.street = properties.street || "";
-            this.notes = properties.notes || undefined;
+            this.notes = properties.notes || "";
         }
     }
 }
