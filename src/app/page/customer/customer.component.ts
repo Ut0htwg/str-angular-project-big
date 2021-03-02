@@ -52,4 +52,5 @@ export class CustomerComponent implements OnInit {
       error => this.toastr.error("There has been an error. The customer isn't deleted", "Hiba!", { timeOut: 3000 })
     )
   }
+
 }

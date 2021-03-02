@@ -28,9 +28,7 @@ export class EditCustomerComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private http: HttpClient
-  ) {
-
-  }
+  ) { }
 
   search = (text$: Observable<string>) =>
     text$.pipe(
@@ -43,7 +41,7 @@ export class EditCustomerComponent implements OnInit {
       this.customerService.get(params.id).subscribe((customer) => {
         console.log(customer);
         this.customer = customer || new Customer();
-        this.customer.active = this.customer.id ? this.customer.active : 'active';
+        this.customer.active = this.customer.id ? this.customer.active : true;
       })
     );
     this.chosenCustomer.id = this.customer.id;
@@ -62,7 +60,7 @@ export class EditCustomerComponent implements OnInit {
 
   like(key: string, value: string, limit: number = 10): Observable<Customer[]> {
     key = `${key}_like`;
-    const query = `${this.customerService.customerapiUrl}/${this.entityName}?${key}=${value}&_limit=${limit}`;
+    const query = `${this.customerService.apiUrl}/${this.entityName}?${key}=${value}&_limit=${limit}`;
     return this.http.get<Customer[]>(query);
   }
 
@@ -106,4 +104,5 @@ export class EditCustomerComponent implements OnInit {
       );
     }
   }
+
 }
