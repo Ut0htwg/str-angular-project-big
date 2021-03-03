@@ -35,7 +35,7 @@
 
                 <label for="amount">Amount</label>
                 <input [(ngModel)]="order.amount" id="amount" name="amount" type="number" class="form-control"
-                    pattern="[1-9]\d?\d?\d?\d?" required />
+                    pattern="[1-9]\d?\d?\d?\d?\d?" required />
                 <div [hidden]="
               orderForm.controls.amount?.valid ||
               orderForm.controls.amount?.pristine
@@ -45,8 +45,8 @@
             </div>
             <div class="form-group">
                 <label for="status">Status</label>
-                <select [(ngModel)]="order.status" class="form-control" style="cursor: pointer" id="status" name="status"
-                    pattern="^(new|shipped|paid)$">
+                <select [(ngModel)]="order.status" class="form-control" style="cursor: pointer" id="status"
+                    name="status" pattern="^(new|shipped|paid)$">
                     <option value="new">new</option>
                     <option value="shipped">shipped</option>
                     <option value="paid">paid</option>
