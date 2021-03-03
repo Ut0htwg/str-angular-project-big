@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="d-flex mb-3 col-6 offset-6">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <select [(ngModel)]="phraseKey" class="custom-select">
             <option value="">find all</option>
             <option *ngFor="let key of keyArray" [value]="key">
@@ -30,7 +30,7 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead class="text-center">
-                  <th (click)="onColumnSelect('id')">
+                  <th class="text-center" (click)="onColumnSelect('id')">
                     #
                     <i *ngIf="columnKey !== 'id'" class="material-icons align-text-bottom text-info"
                       style="cursor: pointer">indeterminate_check_box</i>
@@ -49,7 +49,7 @@
                       style="cursor: pointer">keyboard_arrow_up</i>
                   </th>
                   <th (click)="onColumnSelect('lastName')">
-                    Last name
+                    Last Name
                     <i *ngIf="columnKey !== 'lastName'" class="material-icons align-text-bottom text-info"
                       style="cursor: pointer">indeterminate_check_box</i>
                     <i *ngIf="columnKey === 'lastName' && direction === 'asc'" class="material-icons align-text-top"
@@ -99,11 +99,11 @@
                     <td class="text-center">{{ customer.firstName }}</td>
                     <td class="text-center">{{ customer.lastName }}</td>
                     <td class="text-center">{{ customer.email }}</td>
-                    <td class="text-center">{{ customer.address.zip }}, {{
+                    <td class="text-center">{{ customer.address.zip }} {{
                       customer.address.city }}, {{ customer.address.street }} </td>
                     <td class="text-center">{{ customer.active }}</td>
 
-                    <!--Táblázat sorainak szerkesztőgombjai-->
+            
                     <td class="text-center">
                       <div class="btn-group">
                         <button class="btn btn-success" [routerLink]="[customer.id]">
