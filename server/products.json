@@ -718,19 +718,19 @@
       "id": 28,
       "orderID": 28,
       "amount": 4050,
-      "status": "shipped"
+      "status": "new"
     },
     {
       "id": 29,
-      "orderID": 8,
-      "amount": 8,
+      "orderID": 29,
+      "amount": 5280,
       "status": "new"
     },
     {
       "id": 30,
-      "orderID": 11,
-      "amount": 11,
-      "status": "shipped"
+      "orderID": 0,
+      "amount": 0,
+      "status": "new"
     }
   ],
   "orders": [
@@ -778,9 +778,9 @@
     },
     {
       "id": 7,
-      "customerID": 13,
-      "productID": 10,
-      "amount": 64214,
+      "customerID": 24,
+      "productID": 23,
+      "amount": 24554,
       "status": "new"
     },
     {
@@ -1366,5 +1366,6 @@
       },
       "active": true
     }
+    
   ]
 }

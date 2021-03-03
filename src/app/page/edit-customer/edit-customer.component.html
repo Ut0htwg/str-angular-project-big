@@ -78,7 +78,7 @@
         </div>
 
         <textarea name="notes" [(ngModel)]="customer.address.notes" class="form-control pl-3" placeholder="Notes"
-          rows="5" required></textarea>
+          rows="5" pattern="[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí-]{1,}" required></textarea>
         <div [hidden]="
           customerForm.controls.notes?.valid ||
           customerForm.controls.street?.pristine
