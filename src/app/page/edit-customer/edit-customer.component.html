@@ -9,6 +9,7 @@
         <label for="firstName">First name</label>
         <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control pl-3"
           pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí]{1,}$" required>
+
         <div [hidden]="
             customerForm.controls.firstName?.valid ||
             customerForm.controls.firstName?.pristine
@@ -96,6 +97,7 @@
       </div>
 
       <button [disabled]="customerForm.invalid || updating" type="submit" class="btn btn-block btn-info">
+
         <i *ngIf="!updating" class="fa fa-save"></i>
         <i *ngIf="updating" class="fa fa-refresh"></i>
       </button>
