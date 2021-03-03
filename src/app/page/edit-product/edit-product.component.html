@@ -2,20 +2,21 @@
     <div *ngIf="product" class="col-6 offset-3 mt-5">
         <form #productForm="ngForm" (ngSubmit)="setProductToDatabase(product)">
             <div *ngIf="!updating" class="form-group">
-                <label for="product">#</label>
+                <h2 *ngIf="product.id==0" class="card-title">Create new product</h2>
+                <h2 *ngIf="product.id!=0" class="card-title">Edit product</h2>
+                <label for="product">ProduductID </label>
                 <input [(ngModel)]="product.id" id="product" name="product" type="number" class="form-control"
                     disabled />
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input name="name" [(ngModel)]="product.name" type="text" class="form-control pl-3"
-                    pattern="[A-ZÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ](.{3,99})"
-                    required />
+                    pattern="[A-ZÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ](.{3,99})" required />
                 <div [hidden]="
               productForm.controls.name?.valid ||
               productForm.controls.name?.pristine
             " class="error-message">
-            Must be between 4-100 characters and must start with a capital letter.
+                    Must be between 4-100 characters and must start with a capital letter.
                 </div>
             </div>
 
@@ -51,13 +52,12 @@
             <div class="form-group">
                 <label for="description">Description</label>
                 <input name="description" [(ngModel)]="product.description" type="text" class="form-control pl-3"
-                    pattern="[A-ZÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ](.{3,99})"
-                    required />
+                    pattern="[A-ZÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ](.{3,99})" required />
                 <div [hidden]="
               productForm.controls.description?.valid ||
               productForm.controls.description?.pristine
             " class="error-message">
-            Must be between 4-100 characters and must start with a capital letter.
+                    Must be between 4-100 characters and must start with a capital letter.
                 </div>
             </div>
 
@@ -76,8 +76,7 @@
 
             <div class="form-group">
                 <label for="price">price</label>
-                <input name="price" [(ngModel)]="product.price" type="number" class="form-control"
-                    required>
+                <input name="price" [(ngModel)]="product.price" type="number" class="form-control" required>
                 <div [hidden]="productForm.controls.price?.valid || productForm.controls.price?.pristine"
                     class="error-message">
                     Price is required and can only be a number.
@@ -86,13 +85,11 @@
 
             <div class="form-group">
                 <label class="mr-2" for="featured">Featured</label>
-                <input class="regular-checkbox" name="featured" [(ngModel)]="product.featured"
-                    type="checkbox">
+                <input class="regular-checkbox" name="featured" [(ngModel)]="product.featured" type="checkbox">
             </div>
             <div class="form-group">
                 <label class="mr-2" for="active">Active</label>
-                <input class="regular-checkbox" name="active" [(ngModel)]="product.active"
-                    type="checkbox">
+                <input class="regular-checkbox" name="active" [(ngModel)]="product.active" type="checkbox">
             </div>
 
             <!--MATERIAL ICON vagy FAV ICON a SAVE GOMBON?-->
