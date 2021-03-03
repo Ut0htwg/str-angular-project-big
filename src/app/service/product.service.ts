@@ -11,7 +11,6 @@ export class ProductService {
   productApiUrl: string = 'http://localhost:3000/products';
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
-  // productList: Observable<Product[]> = this.productService.getAll();
 
   constructor(
     private http: HttpClient,
@@ -27,18 +26,6 @@ export class ProductService {
     id = parseInt(('' + id), 10);
     return this.http.get<Product>(`${this.productApiUrl}/${id}`);
   }
-
-  // create(product: Product): void {
-  //   this.http.post<Product>(this.productApiUrl, product).subscribe(
-  //     () => this.getAll()
-  //   );
-  // }
-
-  // update(product: Product): void {
-  //   this.http.patch<Product>(`${this.productApiUrl}/${product.id}`, product).subscribe(
-  //     () => this.getAll()
-  //   );
-  // }
 
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.productApiUrl, product);
