@@ -718,19 +718,13 @@
       "id": 28,
       "orderID": 28,
       "amount": 4050,
-      "status": "shipped"
-    },
-    {
-      "id": 29,
-      "orderID": 8,
-      "amount": 8,
       "status": "new"
     },
     {
-      "id": 30,
-      "orderID": 11,
-      "amount": 11,
-      "status": "shipped"
+      "id": 29,
+      "orderID": 29,
+      "amount": 5280,
+      "status": "new"
     }
   ],
   "orders": [
@@ -778,9 +772,9 @@
     },
     {
       "id": 7,
-      "customerID": 13,
-      "productID": 10,
-      "amount": 64214,
+      "customerID": 24,
+      "productID": 23,
+      "amount": 24554,
       "status": "new"
     },
     {
@@ -1349,20 +1343,6 @@
         "city": "Budapest",
         "street": "Szép utca 32.",
         "notes": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy."
-      },
-      "active": true
-    },
-    {
-      "id": 30,
-      "firstName": "Ferenc",
-      "lastName": "Tardos",
-      "email": "tardosf@gmail.com",
-      "address": {
-        "zip": 1023,
-        "country": "Magyarország",
-        "city": "Budapest",
-        "street": "Váci utca 34.",
-        "notes": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit."
       },
       "active": true
     }

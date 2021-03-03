@@ -46,7 +46,7 @@ export class CustomerComponent implements OnInit {
   onRemove(customer: Customer): void {
     of(this.customerService.remove(customer.id)).subscribe(
       () => {
-        this.toastr.success("You have successfully deleted the customer.", "Törlés!", { timeOut: 3000 });
+        this.toastr.warning("You have successfully deleted the customer.", "Törlés!", { timeOut: 3000 });
         this.customerService.getAll();
       },
       error => this.toastr.error("There has been an error. The customer isn't deleted", "Hiba!", { timeOut: 3000 })
