@@ -725,12 +725,6 @@
       "orderID": 29,
       "amount": 5280,
       "status": "new"
-    },
-    {
-      "id": 30,
-      "orderID": 0,
-      "amount": 0,
-      "status": "new"
     }
   ],
   "orders": [
@@ -1351,21 +1345,6 @@
         "notes": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy."
       },
       "active": true
-    },
-    {
-      "id": 30,
-      "firstName": "Ferenc",
-      "lastName": "Tardos",
-      "email": "tardosf@gmail.com",
-      "address": {
-        "zip": 1023,
-        "country": "Magyarország",
-        "city": "Budapest",
-        "street": "Váci utca 34.",
-        "notes": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit."
-      },
-      "active": true
     }
-    
   ]
 }
