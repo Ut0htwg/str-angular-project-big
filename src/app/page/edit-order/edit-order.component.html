@@ -2,6 +2,8 @@
     <div *ngIf="order" class="col-6 offset-3 mt-5">
         <form #orderForm="ngForm" (ngSubmit)="setOrderToDatabase(order)">
             <div *ngIf="!updating" class="form-group">
+                <h2 *ngIf="order.id==0" class="card-title">Create new order</h2>
+                <h2 *ngIf="order.id!=0" class="card-title">Edit order</h2>
                 <label for="order">#</label>
                 <input [(ngModel)]="order.id" id="order" name="order" type="number" class="form-control" disabled />
 

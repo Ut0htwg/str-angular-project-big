@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="d-flex mb-3 col-6 offset-6">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <select [(ngModel)]="phraseKey" class="custom-select">
               <option value="">find all</option>
               <option *ngFor="let key of keyArray" [value]="key">
@@ -56,7 +56,7 @@
                         >keyboard_arrow_up</i
                       >
                     </th>
-                    <th (click)="onColumnSelect('name')">
+                    <th (click)="onColumnSelect('name')" style="width: 10%">
                       Name
                       <i
                         *ngIf="columnKey !== 'name'"
@@ -99,7 +99,7 @@
                       >
                     </th>
                     <th (click)="onColumnSelect('catID')">
-                        catID
+                        CatID
                       <i
                         *ngIf="columnKey !== 'catID'"
                         class="material-icons align-text-bottom text-info"
@@ -119,7 +119,7 @@
                         >keyboard_arrow_up</i
                       >
                     </th>
-                    <th (click)="onColumnSelect('description')">
+                    <th (click)="onColumnSelect('description')" style="width: 20%">
                         Description
                       <i
                         *ngIf="columnKey !== 'description'"
@@ -140,7 +140,7 @@
                         >keyboard_arrow_up</i
                       >
                     </th>
-                    <th (click)="onColumnSelect('image')">
+                    <!-- <th (click)="onColumnSelect('image')">
                         Image
                       <i
                         *ngIf="columnKey !== 'image'"
@@ -160,7 +160,7 @@
                         style="cursor: pointer"
                         >keyboard_arrow_up</i
                       >
-                    </th>
+                    </th> -->
                     <th (click)="onColumnSelect('price')">
                         Price
                       <i
@@ -240,7 +240,7 @@
                     <td class="text-center">{{ product.type }}</td>
                     <td class="text-center">{{ product.catID }}</td>
                     <td class="text-center">{{ product.description }}</td>
-                    <td class="text-center">{{ product.image }}</td>
+                    <!-- <td class="text-center">{{ product.image }}</td> -->
                     <td class="text-center">{{ product.price }}</td>
                     <td class="text-center">{{ product.featured }}</td>
                     <td class="text-center">{{ product.active }}</td>

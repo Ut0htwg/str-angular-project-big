@@ -2,6 +2,8 @@
     <div *ngIf="bill" class="col-6 offset-3 mt-5">
         <form #billForm="ngForm" (ngSubmit)="setBillToDatabase(bill)">
             <div *ngIf="!updating" class="form-group">
+                <h2 *ngIf="bill.id==0" class="card-title">Create new bill</h2>
+                <h2 *ngIf="bill.id!=0" class="card-title">Edit bill</h2>
                 <label for="bill">#</label>
                 <input [(ngModel)]="bill.id" id="bill" name="bill" type="number" class="form-control" disabled />
             </div>

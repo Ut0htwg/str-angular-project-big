@@ -4,7 +4,7 @@
             <div *ngIf="!updating" class="form-group">
                 <h2 *ngIf="product.id==0" class="card-title">Create new product</h2>
                 <h2 *ngIf="product.id!=0" class="card-title">Edit product</h2>
-                <label for="product">ProduductID </label>
+                <label for="product">#</label>
                 <input [(ngModel)]="product.id" id="product" name="product" type="number" class="form-control"
                     disabled />
             </div>
@@ -22,22 +22,22 @@
 
             <div class="form-group">
                 <label for="type">Type</label>
-                <select [(ngModel)]="product.type" class="form-control" style="cursor: pointer" id="type" name="type"
-                    pattern="^(book)$">
-                    <option value="book">book</option>
+                <select [(ngModel)]="product.type" class="form-control" style="cursor: pointer" id="type" name="type" required>
+                    <option value="biographical">biographical</option>
+                    <option value="fiction">fiction</option>
                 </select>
 
                 <div [hidden]="
           productForm.controls.type?.valid ||
           productForm.controls.type?.pristine
         " class="error-message">
-                    You must select valid type.
+                    You must select one of the types.
                 </div>
             </div>
 
             <div class="form-group">
 
-                <label for="catID">catID</label>
+                <label for="catID">CatID</label>
                 <input [(ngModel)]="product.catID" id="catID" name="catID" type="number" class="form-control" required
                     pattern="[1-9]\d?" autofocus />
 
@@ -45,7 +45,7 @@
           productForm.controls.catID?.valid ||
           productForm.controls.catID?.pristine
         " class="error-message">
-                    You must enter valid value.
+                    You must enter a valid value.
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="image">Image</label>
                 <input name="image" [(ngModel)]="product.image" type="text" class="form-control pl-3"
                     pattern="^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u"
@@ -72,7 +72,7 @@
             " class="error-message">
                     You must enter a valid description.
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group">
                 <label for="price">price</label>
@@ -91,16 +91,6 @@
                 <label class="mr-2" for="active">Active</label>
                 <input class="regular-checkbox" name="active" [(ngModel)]="product.active" type="checkbox">
             </div>
-
-            <!--MATERIAL ICON vagy FAV ICON a SAVE GOMBON?-->
-
-            <!-- <button
-            [disabled]="customerForm.invalid || updating" type="submit"
-            class="btn btn-block btn-info"
-          >
-            <i *ngIf="!updating" class="material-icons">save_alt</i>
-            <i *ngIf="updating" class="material-icons save">cached</i>
-          </button> -->
 
             <button [disabled]="productForm.invalid || updating" type="submit" class="btn btn-block btn-info">
                 <i *ngIf="!updating" class="fa fa-save"></i>
