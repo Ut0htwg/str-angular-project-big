@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
-// import { ProductComponent } from './page/product/product.component';
-// import { EditProductComponent } from './page/edit-product/edit-product.component';
+import { ProductComponent } from './page/product/product.component';
+import { EditProductComponent } from './page/edit-product/edit-product.component';
 import { CustomerComponent } from './page/customer/customer.component';
 import { EditCustomerComponent } from './page/edit-customer/edit-customer.component';
 import { OrderComponent } from './page/order/order.component';
@@ -27,14 +27,14 @@ const routes: Routes = [
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
   },
-  // {
-  //   path: 'products',
-  //   component: ProductComponent
-  // },
-  // {
-  //   path: 'products/:id',
-  //   component: EditProductComponent
-  // },
+  {
+    path: 'products',
+    component: ProductComponent
+  },
+  {
+    path: 'products/:id',
+    component: EditProductComponent
+  },
   {
     path: 'customers',
     component: CustomerComponent
