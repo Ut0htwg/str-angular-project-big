@@ -43,5 +43,4 @@ export class SorterPipe implements PipeTransform {
     })
   }
 
-
 }
