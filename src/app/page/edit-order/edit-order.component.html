@@ -2,8 +2,8 @@
     <div *ngIf="order" class="col-6 offset-3 mt-5">
         <form #orderForm="ngForm" (ngSubmit)="setOrderToDatabase(order)">
             <div *ngIf="!updating" class="form-group">
-                <h2 *ngIf="order.id==0" class="card-title">Create new order</h2>
-                <h2 *ngIf="order.id!=0" class="card-title">Edit order</h2>
+                <h2 *ngIf="order.id==0" class="card-title mb-5">Create new order</h2>
+                <h2 *ngIf="order.id!=0" class="card-title mb-5">Edit order</h2>
                 <label for="order">#</label>
                 <input [(ngModel)]="order.id" id="order" name="order" type="number" class="form-control" disabled />
 
@@ -18,7 +18,7 @@
               orderForm.controls.customer?.valid ||
               orderForm.controls.customer?.pristine
             " class="error-message">
-                    Kötelezően kitöltendő mező! Maximum 2 számjegyű lehet.
+                    The customer ID needs to be filled. It can be maximum 2 characters and contains only numbers.
                 </div>
             </div>
             <div class="form-group">
@@ -30,7 +30,7 @@
               orderForm.controls.product?.valid ||
               orderForm.controls.product?.pristine
             " class="error-message">
-                    Kötelezően kitöltendő mező! Maximum 2 számjegyű.
+                    The product ID needs to be filled. It can be maximum 2 characters and contains only numbers.
                 </div>
             </div>
             <div class="form-group">
@@ -42,13 +42,13 @@
               orderForm.controls.amount?.valid ||
               orderForm.controls.amount?.pristine
             " class="error-message">
-                    Kötelezően kitöltendő mező! Maximum 6 számjegyű.
+                    The amount needs to be filled. It can be maximum 6 characters and contains only numbers.
                 </div>
             </div>
             <div class="form-group">
                 <label for="status">Status</label>
                 <select [(ngModel)]="order.status" class="form-control" style="cursor: pointer" id="status"
-                    name="status" pattern="^(new|shipped|paid)$">
+                    name="status" pattern="^(new|shipped|paid)$" required>
                     <option value="new">new</option>
                     <option value="shipped">shipped</option>
                     <option value="paid">paid</option>
@@ -58,7 +58,7 @@
               orderForm.controls.status?.valid ||
               orderForm.controls.status?.pristine
             " class="error-message">
-                    Kötelezően kitöltendő mező! Csak new, shipped vagy paid lehet.
+                    You must select one of the types.
                 </div>
             </div>
             <button [disabled]="orderForm.invalid || updating" class="btn btn-block btn-info">

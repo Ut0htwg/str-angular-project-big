@@ -80,28 +80,28 @@ export class EditBillComponent implements OnInit {
     if (bill.id === 0) {
       this.billService.create(bill).subscribe(
         () => {
-          this.toastr.success('Sikeresen létrehoztad a számlát!', 'Siker!', {
+          this.toastr.success('You have successfully added a bill.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['bills']);
         },
         (error) =>
-          this.toastr.error('Hiba a számla létrehozásakor!', 'Hiba!', {
+          this.toastr.error('There has been an error. The bill is not added.', 'Error!', {
             timeOut: 3000,
           })
       );
     } else {
       this.billService.update(bill).subscribe(
         () => {
-          this.toastr.success('Sikeresen módosítottad a számlát!', 'Siker!', {
+          this.toastr.success('You have successfully updated the bill.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['bills']);
         },
         (error) =>
-          this.toastr.error('Hiba történt a számla frissítésekor!', 'Hiba!', {
+          this.toastr.error('There has been an error. The bill is not updated.', 'Error!', {
             timeOut: 3000,
           })
       );

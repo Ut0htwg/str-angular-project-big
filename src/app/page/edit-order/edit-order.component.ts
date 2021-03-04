@@ -80,28 +80,28 @@ export class EditOrderComponent implements OnInit {
     if (order.id === 0) {
       this.orderService.create(order).subscribe(
         () => {
-          this.toastr.success('Sikeresen létrehozott rendelés!', 'Siker!', {
+          this.toastr.success('You have successfully added an order.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['orders']);
         },
         (error) =>
-          this.toastr.error('Hiba a rendelés létrehozásakor!', 'Hiba!', {
+          this.toastr.error('There has been an error. The order is not added.', 'Error!', {
             timeOut: 3000,
           })
       );
     } else {
       this.orderService.update(order).subscribe(
         () => {
-          this.toastr.success('Sikeresen frissítetted a rendelést!', 'Siker!', {
+          this.toastr.success('You have successfully updated the order.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['orders']);
         },
         (error) =>
-          this.toastr.error('Hiba történt a rendelés frissítésekor!', 'Hiba!', {
+          this.toastr.error('There has been an error. The order is not updated.', 'Error!', {
             timeOut: 3000,
           })
       );
