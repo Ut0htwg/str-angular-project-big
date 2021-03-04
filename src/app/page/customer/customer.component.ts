@@ -20,6 +20,7 @@ export class CustomerComponent implements OnInit {
   // sorter
   columnKey: string = '';
   direction: string = '';
+  sortDir: number = -1;
 
   constructor(
     private customerService: CustomerService,
@@ -28,12 +29,6 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerService.getAll();
-  }
-
-  // sorter
-  onColumnSelect(key: string): void {
-    this.swichDirectionValue();
-    this.columnKey = key;
   }
 
   swichDirectionValue(): any {
@@ -51,6 +46,12 @@ export class CustomerComponent implements OnInit {
       },
       error => this.toastr.error("There has been an error. The customer isn't deleted", "Error!", { timeOut: 3000 })
     )
+  }
+
+  onColumnSelect(key: string): void {
+    this.swichDirectionValue();
+    this.columnKey = key;
+    this.sortDir = this.sortDir * (-1);
   }
 
 }
