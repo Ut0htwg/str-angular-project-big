@@ -73,28 +73,28 @@ export class EditCustomerComponent implements OnInit {
     if (customer.id === 0) {
       this.customerService.create(customer).subscribe(
         () => {
-          this.toastr.success('You have successfully added a customer.', 'Siker!', {
+          this.toastr.success('You have successfully added a customer.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['customers']);
         },
         (error) =>
-          this.toastr.error('There has been an error. The customer is not added.', 'Hiba!', {
+          this.toastr.error('There has been an error. The customer is not added.', 'Error!', {
             timeOut: 3000,
           })
       );
     } else {
       this.customerService.update(customer).subscribe(
         () => {
-          this.toastr.success('You have successfully updated the customer.', 'Siker!', {
+          this.toastr.success('You have successfully updated the customer.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['customers']);
         },
         (error) =>
-          this.toastr.error('There has been an error. The customer is not updated.', 'Hiba!', {
+          this.toastr.error('There has been an error. The customer is not updated.', 'Error!', {
             timeOut: 3000,
           })
       );

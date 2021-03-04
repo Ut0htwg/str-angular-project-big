@@ -43,7 +43,7 @@ export class EditProductComponent implements OnInit {
       this.productService.get(params.id).subscribe((product) => {
         console.log(product);
         this.product = product || new Product();
-        this.product.status = this.product.id ? this.product.active : 'new';
+        this.product.active = this.product.id ? this.product.active : true;
       })
     );
     this.chosenProduct.id = this.product.id;
@@ -79,28 +79,28 @@ export class EditProductComponent implements OnInit {
     if (product.id === 0) {
       this.productService.create(product).subscribe(
         () => {
-          this.toastr.success('Sikeresen létrehozott termék!', 'Siker!', {
+          this.toastr.success('You have successfully added a product.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['products']);
         },
         (error) =>
-          this.toastr.error('Hiba a termék létrehozásakor!', 'Hiba!', {
+          this.toastr.error('There has been an error. The product is not added.', 'Error!', {
             timeOut: 3000,
           })
       );
     } else {
       this.productService.update(product).subscribe(
         () => {
-          this.toastr.success('Sikeresen módítottad a terméket!', 'Siker!', {
+          this.toastr.success('You have successfully updated the product.', 'Success!', {
             timeOut: 3000,
           });
           this.updating = false;
           this.router.navigate(['products']);
         },
         (error) =>
-          this.toastr.error('Hiba történt a számla módosításakor!', 'Hiba!', {
+          this.toastr.error('There has been an error. The product is not updated.', 'Error!', {
             timeOut: 3000,
           })
       );

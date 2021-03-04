@@ -46,10 +46,10 @@ export class ProductComponent implements OnInit {
   onRemove(product: Product): void {
     of(this.productService.remove(product.id)).subscribe(
       () => {
-        this.toastr.warning('Sikeresen törölted a terméket!', 'Törlés!', { timeOut: 3000 });
+        this.toastr.warning("You have successfully deleted the product.", "Deleted!", { timeOut: 3000 });
         this.productService.getAll();
       },
-      error => this.toastr.error('Hiba történt a termék törlésekor!', 'Hiba!', { timeOut: 3000 })
+      error => this.toastr.error("There has been an error. The product isn't deleted", "Error!", { timeOut: 3000 })
     )
   }
 

@@ -2,15 +2,15 @@
     <div *ngIf="bill" class="col-6 offset-3 mt-5">
         <form #billForm="ngForm" (ngSubmit)="setBillToDatabase(bill)">
             <div *ngIf="!updating" class="form-group">
-                <h2 *ngIf="bill.id==0" class="card-title">Create new bill</h2>
-                <h2 *ngIf="bill.id!=0" class="card-title">Edit bill</h2>
+                <h2 *ngIf="bill.id==0" class="card-title mb-5">Create new bill</h2>
+                <h2 *ngIf="bill.id!=0" class="card-title mb-5">Edit bill</h2>
                 <label for="bill">#</label>
                 <input [(ngModel)]="bill.id" id="bill" name="bill" type="number" class="form-control" disabled />
             </div>
             <div class="form-group">
                 <label for="order">OrderID</label>
                 <input name="order" [(ngModel)]="bill.orderID" type="number" class="form-control"
-                    pattern="^[1-9][0-9]{0,}" required autofocus>
+                    pattern="^[1-9][0-9]{0,}" required>
                 <div [hidden]="billForm.controls.order?.valid || billForm.controls.order?.pristine"
                     class="error-message">
                     The order ID needs to be filled. It must contain only numbers.
@@ -31,7 +31,7 @@
             <div class="form-group">
                 <label for="status">Status</label>
                 <select [(ngModel)]="bill.status" class="form-control" style="cursor: pointer" id="status" name="status"
-                    pattern="^(new|paid)$">
+                    pattern="^(new|paid)$" required>
                     <option value="new">new</option>
                     <option value="paid">paid</option>
                 </select>
@@ -39,7 +39,7 @@
               billForm.controls.status?.valid ||
               billForm.controls.status?.pristine
             " class="error-message">
-                    Kötelezően kitöltendő mező! Csak new vagy paid lehet.
+                    You must select one of the types.
                 </div>
             </div>
 

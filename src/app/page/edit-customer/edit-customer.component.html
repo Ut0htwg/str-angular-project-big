@@ -2,8 +2,8 @@
   <div *ngIf="customer" class="col-6 offset-3 mt-5">
     <form #customerForm="ngForm" (ngSubmit)="setCustomerToDatabase(customer)">
       <div *ngIf="!updating" class="form-group">
-        <h2 *ngIf="customer.id==0" class="card-title">Create new customer</h2>
-        <h2 *ngIf="customer.id!=0" class="card-title">Edit customer</h2>
+        <h2 *ngIf="customer.id==0" class="card-title mb-5">Create new customer</h2>
+        <h2 *ngIf="customer.id!=0" class="card-title mb-5">Edit customer</h2>
         <label for="customer">#</label>
         <input [(ngModel)]="customer.id" id="customer" name="customer" type="number" class="form-control" disabled>
       </div>
@@ -90,9 +90,9 @@
         </div>
       </div>
 
-      <div class="form-check my-3">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="active" [(ngModel)]="customer.active">Aktív
+      <div class="form-check">
+        <label class="form-check-label mt-3 mb-5 ml-2">
+          <input class="form-check-input" type="checkbox" name="active" [(ngModel)]="customer.active">Active
           <span class="form-check-sign">
             <span class="check"></span>
           </span>

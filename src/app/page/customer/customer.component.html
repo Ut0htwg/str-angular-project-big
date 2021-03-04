@@ -30,7 +30,7 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead class="text-center">
-                  <th class="text-center" (click)="onColumnSelect('id')">
+                  <th (click)="onColumnSelect('id')">
                     #
                     <i *ngIf="columnKey !== 'id'" class="material-icons align-text-bottom text-info"
                       style="cursor: pointer">indeterminate_check_box</i>
@@ -99,7 +99,7 @@
                     <td class="text-center">{{ customer.firstName }}</td>
                     <td class="text-center">{{ customer.lastName }}</td>
                     <td class="text-center">{{ customer.email }}</td>
-                    <td class="text-center">{{ customer.address.zip }} {{
+                    <td class="text-center">{{ customer.address.zip }}, {{
                       customer.address.city }}, {{ customer.address.street }} </td>
                     <td class="text-center">{{ customer.active }}</td>
 
