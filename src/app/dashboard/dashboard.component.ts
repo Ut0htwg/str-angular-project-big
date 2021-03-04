@@ -12,8 +12,8 @@ import { combineLatest, Subscription } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
 
-  numberOfProducts: number = 0;
-  numberOfCustomers: number = 0;
+  numberOfActiveProducts: number = 0;
+  numberOfActiveCustomers: number = 0;
   numberOfUnpaidOrders: number = 0;
   amountOfUnpaidBills: number = 0;
 
@@ -34,8 +34,8 @@ export class DashboardComponent implements OnInit {
       this.billService.list$,
     ]).subscribe(
       data => {
-        this.numberOfProducts  = data[0].length;
-        this.numberOfCustomers = data[1].length;
+        this.numberOfActiveProducts  = data[0].filter(p => p.active === true).length;
+        this.numberOfActiveCustomers = data[1].filter(c => c.active === true).length;
         this.numberOfUnpaidOrders = data[2].filter(o => o.status !== 'paid').length;
         this.amountOfUnpaidBills = data[3]
           .filter(b => b.status !== 'paid')
