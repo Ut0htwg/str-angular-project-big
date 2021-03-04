@@ -11,7 +11,6 @@ export class OrderService {
   orderApiUrl: string = 'http://localhost:3000/orders';
 
   list$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
-  // orderList: Observable<Order[]> = this.orderService.getAll();
 
   constructor(
     private http: HttpClient,
@@ -27,18 +26,6 @@ export class OrderService {
     id = parseInt(('' + id), 10);
     return this.http.get<Order>(`${this.orderApiUrl}/${id}`);
   }
-
-  // create(order: Order): void {
-  //   this.http.post<Order>(this.orderApiUrl, order).subscribe(
-  //     () => this.getAll()
-  //   );
-  // }
-
-  // update(order: Order): void {
-  //   this.http.patch<Order>(`${this.orderApiUrl}/${order.id}`, order).subscribe(
-  //     () => this.getAll()
-  //   );
-  // }
 
   create(order: Order): Observable<Order> {
     return this.http.post<Order>(this.orderApiUrl, order);

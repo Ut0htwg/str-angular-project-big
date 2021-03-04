@@ -45,10 +45,10 @@ export class BillComponent implements OnInit {
   onRemove(bill: Bill): void {
     of(this.billService.remove(bill.id)).subscribe(
       () => {
-        this.toastr.warning('Sikeresen törölted a számlát!', 'Törlés!', { timeOut: 3000 });
+        this.toastr.warning("You have successfully deleted the bill.", "Deleted!", { timeOut: 3000 });
         this.billService.getAll();
       },
-      error => this.toastr.error('Hiba történt a számla törlésekor!', 'Hiba!', { timeOut: 3000 })
+      error => this.toastr.error("There has been an error. The bill isn't deleted", "Error!", { timeOut: 3000 })
     )
   }
 }
