@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Bill } from 'app/model/bill';
+import { BillService } from 'app/service/bill.service';
+import { CustomerService } from 'app/service/customer.service';
+import { OrderService } from 'app/service/order.service';
+import { ProductService } from 'app/service/product.service';
 import * as Chartist from 'chartist';
+import { BehaviorSubject, combineLatest, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +14,22 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  numberOfProducts: number = 0;
+  numberOfCustomers: number = 0;
+  numberOfUnpaidOrders: number = 0;
+  billAmount: number = 0;
+  billList: number [] = [];
+
+  combinedSubscription: Subscription = new Subscription;
+
+  constructor(
+    private productService:  ProductService,
+    private orderService:    OrderService,
+    private customerService: CustomerService,
+    private billService:     BillService,
+  ) { }
+
+
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -62,10 +83,37 @@ export class DashboardComponent implements OnInit {
             });
         }
       });
-
+      
       seq2 = 0;
-  };
-  ngOnInit() {
+    };
+
+    ngOnInit(): void {
+      /* ----------==========     Values: number of products, customers
+                                                    orders and bills on the cards       ==========---------- */
+    this.combinedSubscription = combineLatest([
+      this.productService.list$,
+      this.customerService.list$,
+      this.orderService.list$,
+      this.billService.list$,
+    ]).subscribe(
+      data => {
+        this.numberOfProducts  = data[0].length;
+        this.numberOfCustomers = data[1].length;
+        this.numberOfUnpaidOrders = data[2].filter( o => o.status !== 'paid' ).length;
+        this.billAmount = data[3]
+          .filter( bi => bi.status !== 'paid' ).length;
+          // ['this.amount'];
+        // this.billAmount = this.billList.reduce(function(a: number, b: number) {
+        //     return a + b;
+        //   });
+      }
+    );
+
+    this.productService.getAll();
+    this.customerService.getAll();
+    this.orderService.getAll();
+    this.billService.getAll();
+
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       const dataDailySalesChart: any = {
@@ -145,6 +193,10 @@ export class DashboardComponent implements OnInit {
 
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
+  }
+
+  ngOnDestroy(): void {
+    this.combinedSubscription.unsubscribe();
   }
 
 }

@@ -10,7 +10,7 @@
                             <i class="material-icons">auto_stories</i>
                         </div>
                         <p class="card-category">Products</p>
-                        <h3 class="card-title product-number">49</h3>
+                        <h3 class="card-title product-number">{{ numberOfProducts }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">Number of active products</div>
@@ -26,7 +26,7 @@
                             <i class="material-icons">account_circle</i>
                         </div>
                         <p class="card-category">Customers</p>
-                        <h3 class="card-title customer-number">34245</h3>
+                        <h3 class="card-title customer-number">{{ numberOfCustomers }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">Number of active customers</div>
@@ -44,7 +44,7 @@
                             <i class="material-icons">add_shopping_cart</i>
                         </div>
                         <p class="card-category">Orders</p>
-                        <h3 class="card-title order-number">75</h3>
+                        <h3 class="card-title order-number">{{ numberOfUnpaidOrders }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">Number of unpaid orders</div>
@@ -59,7 +59,7 @@
                             <i class="material-icons">receipt_long</i>
                         </div>
                         <p class="card-category">Bills</p>
-                        <h3 class="card-title bill-amount">94245
+                        <h3 class="card-title bill-amount">{{ billAmount }}
                             <small>HUF</small>
                         </h3>
                     </div>
