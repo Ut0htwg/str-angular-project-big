@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
         this.amountOfUnpaidBills = data[3]
           .filter(b => b.status !== 'paid')
           .map(b => b.amount)
-          .reduce((prev, curr) => prev + curr);
+          .reduce((prev, curr) => prev + curr, 0);
       }
     );
   
