@@ -92,14 +92,14 @@
                   <tr *ngFor="
                       let customer of customerList$
                         | async
-                        | filter: txt:phraseKey
-                        | sorter: direction:columnKey
+                        | filter: txt:phraseKey                        
+                        | customerSorter:columnKey:sortDir
                     ">
                     <td class="text-center">{{ customer.id }}</td>
                     <td class="text-center">{{ customer.firstName }}</td>
                     <td class="text-center">{{ customer.lastName }}</td>
                     <td class="text-center">{{ customer.email }}</td>
-                    <td class="text-center">{{ customer.address.zip }}, {{
+                    <td class="text-center">{{ customer.address.zip }} {{
                       customer.address.city }}, {{ customer.address.street }} </td>
                     <td class="text-center">{{ customer.active }}</td>
 
