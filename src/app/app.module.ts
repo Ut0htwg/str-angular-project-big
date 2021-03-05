@@ -29,6 +29,7 @@ import { CustomerComponent } from './page/customer/customer.component';
 import { EditCustomerComponent } from './page/edit-customer/edit-customer.component';
 import { ProductComponent } from './page/product/product.component';
 import { EditProductComponent } from './page/edit-product/edit-product.component';
+import { CustomerSorterPipe } from './pipes/customer-sorter.pipe';
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import { EditProductComponent } from './page/edit-product/edit-product.component
     EditCustomerComponent,
     ProductComponent,
     EditProductComponent,
+    CustomerSorterPipe,
 
   ],
   providers: [],
