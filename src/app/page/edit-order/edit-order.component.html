@@ -5,14 +5,14 @@
                 <h2 *ngIf="order.id==0" class="card-title mb-5">Create new order</h2>
                 <h2 *ngIf="order.id!=0" class="card-title mb-5">Edit order</h2>
                 <label for="order">#</label>
-                <input [(ngModel)]="order.id" id="order" name="order" type="number" class="form-control" disabled />
+                <input [(ngModel)]="order.id" id="order" name="order" type="number" class="form-control" disabled>
 
             </div>
             <div class="form-group">
 
                 <label for="customer">customerID</label>
                 <input [(ngModel)]="order.customerID" id="customer" name="customer" type="number" class="form-control"
-                    required pattern="[1-9]\d?" autofocus />
+                    required pattern="[1-9]\d?">
 
                 <div [hidden]="
               orderForm.controls.customer?.valid ||
@@ -25,7 +25,7 @@
 
                 <label for="product">ProductID</label>
                 <input id="product" [(ngModel)]="order.productID" name="product" type="number" class="form-control"
-                    pattern="[1-9]\d?" required />
+                    pattern="[1-9]\d?" required>
                 <div [hidden]="
               orderForm.controls.product?.valid ||
               orderForm.controls.product?.pristine
@@ -37,7 +37,7 @@
 
                 <label for="amount">Amount</label>
                 <input [(ngModel)]="order.amount" id="amount" name="amount" type="number" class="form-control"
-                    pattern="[1-9]\d?\d?\d?\d?\d?" required />
+                    pattern="[1-9]\d?\d?\d?\d?\d?" required>
                 <div [hidden]="
               orderForm.controls.amount?.valid ||
               orderForm.controls.amount?.pristine
