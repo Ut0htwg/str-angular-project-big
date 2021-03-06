@@ -7,10 +7,12 @@
                 <label for="bill">#</label>
                 <input [(ngModel)]="bill.id" id="bill" name="bill" type="number" class="form-control" disabled>
             </div>
+
             <div class="form-group">
                 <label for="order">OrderID</label>
                 <input name="order" [(ngModel)]="bill.orderID" type="number" class="form-control"
                     pattern="^[1-9][0-9]{0,}" required>
+
                 <div [hidden]="billForm.controls.order?.valid || billForm.controls.order?.pristine"
                     class="error-message">
                     The order ID needs to be filled. It must contain only numbers.
@@ -21,6 +23,7 @@
                 <label for="amount">Amount</label>
                 <input name="amount" [(ngModel)]="bill.amount" type="number" class="form-control"
                     pattern="^[1-9][0-9]{0,}" required>
+
                 <div [hidden]="billForm.controls.amount?.valid ||
                 billForm.controls.amount?.pristine" class="error-message">
                     The order amount needs to be filled. It must contain only numbers.
@@ -35,6 +38,7 @@
                     <option value="new">new</option>
                     <option value="paid">paid</option>
                 </select>
+                
                 <div [hidden]="
               billForm.controls.status?.valid ||
               billForm.controls.status?.pristine
@@ -43,9 +47,12 @@
                 </div>
             </div>
 
+            <div *ngIf="billForm.invalid" class="alert alert-warning text-center" role="alert">
+                All fields need to be filled!
+            </div>
+
             <button [disabled]="billForm.invalid || updating" type="submit" class="btn btn-block btn-info">
                 <i *ngIf="!updating" class="fa fa-save"></i>
-
                 <i *ngIf="updating" class="fa fa-refresh"></i>
             </button>
         </form>
