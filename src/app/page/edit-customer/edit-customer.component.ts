@@ -13,6 +13,7 @@ import { debounceTime, switchMap } from 'rxjs/operators';
   templateUrl: './edit-customer.component.html',
   styleUrls: ['./edit-customer.component.css']
 })
+
 export class EditCustomerComponent implements OnInit {
   customer: Customer = new Customer();
   updating: boolean = false;
@@ -35,6 +36,7 @@ export class EditCustomerComponent implements OnInit {
       debounceTime(300),
       switchMap((txt) => this.like('firstName', txt))
     );
+
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) =>
       this.customerService.get(params.id).subscribe((customer) => {
@@ -45,10 +47,12 @@ export class EditCustomerComponent implements OnInit {
     );
     this.chosenCustomer.id = this.customer.id;
   }
+
   customerResultFormatter(customer: Customer): string {
     return `${customer.firstName} ${customer.lastName}`;
   }
-  customerIputFormatter(customer: Customer): string {
+
+  customerInputFormatter(customer: Customer): string {
     if (!customer.id) {
       return '';
     }
@@ -67,6 +71,7 @@ export class EditCustomerComponent implements OnInit {
       .update(this.customer)
       .subscribe(() => this.router.navigate(['customers']));
   }
+
   setCustomerToDatabase(customer: Customer): void {
     this.updating = true;
     customer.id = Number(customer.id);

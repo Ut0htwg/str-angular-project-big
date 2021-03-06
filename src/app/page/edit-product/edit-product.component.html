@@ -2,8 +2,7 @@
     <div *ngIf="product" class="col-6 offset-3 mt-5">
         <form #productForm="ngForm" (ngSubmit)="setProductToDatabase(product)">
             <div *ngIf="!updating" class="form-group">
-                <h2 *ngIf="product.id==0" class="card-title mb-5">Create new product
-                </h2>
+                <h2 *ngIf="product.id==0" class="card-title mb-5">Create new product</h2>
                 <h2 *ngIf="product.id!=0" class="card-title mb-5">Edit product</h2>
                 <label for="product">#</label>
                 <input [(ngModel)]="product.id" id="product" name="product"
@@ -16,6 +15,7 @@
                     class="form-control"
                     pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí., -]{3,}$"
                     required>
+
                 <div [hidden]="
               productForm.controls.name?.valid ||
               productForm.controls.name?.pristine
@@ -62,6 +62,7 @@
                     class="form-control" rows="5"
                     pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí., -]{3,}$"
                     required></textarea>
+
                 <div [hidden]="
               productForm.controls.description?.valid ||
               productForm.controls.description?.pristine
@@ -98,6 +99,10 @@
                         <span class="check"></span>
                     </span>
                 </label>
+            </div>
+
+            <div *ngIf="productForm.invalid" class="alert alert-warning text-center" role="alert">
+                All fields need to be filled!
             </div>
 
             <button [disabled]="productForm.invalid || updating" type="submit"
