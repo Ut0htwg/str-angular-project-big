@@ -32,7 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatTooltipModule,
   ],
   declarations: [
-    DashboardComponent,
+    // DashboardComponent,
     UserProfileComponent,
     TableListComponent,
     TypographyComponent,
