@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
 import { ProductComponent } from './page/product/product.component';
 import { EditProductComponent } from './page/edit-product/edit-product.component';
 import { CustomerComponent } from './page/customer/customer.component';
@@ -12,6 +10,7 @@ import { OrderComponent } from './page/order/order.component';
 import { EditOrderComponent } from './page/edit-order/edit-order.component';
 import { BillComponent } from './page/bill/bill.component';
 import { EditBillComponent } from './page/edit-bill/edit-bill.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -20,12 +19,8 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-    }]
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
     path: 'products',
@@ -65,9 +60,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule

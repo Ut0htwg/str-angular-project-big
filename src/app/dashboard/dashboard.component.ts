@@ -4,7 +4,7 @@ import { CustomerService } from 'app/service/customer.service';
 import { OrderService } from 'app/service/order.service';
 import { ProductService } from 'app/service/product.service';
 import { combineLatest, Subscription } from 'rxjs';
-import { ChartsModule, Label } from 'ng2-charts';
+import { Label } from 'ng2-charts';
 import { ChartDataSets } from 'chart.js';
 
 @Component({
@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   amountOfPaidBills: number = 0;
   amountOfUnpaidBills: number = 0;
   combinedSubscription: Subscription = new Subscription();
+
   orderChartLabels: Label[] = ["new", "shipped", "paid"];
   orderChartData: ChartDataSets[] = [
     { data: [0, 0, 0], label: "Orders"},
@@ -32,7 +33,7 @@ export class DashboardComponent implements OnInit {
   billChartData: ChartDataSets[] = [
     { data: [0], label: "Bills"}
   ]
-
+  test : Date = new Date();
 
   constructor(
     private productService: ProductService,

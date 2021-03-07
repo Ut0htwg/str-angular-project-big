@@ -17,8 +17,6 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { ChartComponent } from 'app/components/chart/chart.component';
-import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -32,10 +30,9 @@ import { ChartsModule } from 'ng2-charts';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    ChartsModule
   ],
   declarations: [
-    DashboardComponent,
+    // DashboardComponent,
     UserProfileComponent,
     TableListComponent,
     TypographyComponent,
@@ -43,8 +40,6 @@ import { ChartsModule } from 'ng2-charts';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    ChartComponent,
-    ChartsModule
   ]
 })
 

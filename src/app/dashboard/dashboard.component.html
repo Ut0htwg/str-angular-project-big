@@ -1,7 +1,7 @@
-<div class="main-content d-flex align-items-center">
-  <div class="container">
+<div class="main-content">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-info card-header-icon">
             <div class="card-icon">
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-danger card-header-icon">
             <div class="card-icon">
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-warning card-header-icon">
             <div class="card-icon">
@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-success card-header-icon">
             <div class="card-icon">
@@ -64,45 +64,42 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card card-chart">
-            <div class="card-header card-header-warning">
-              <app-chart
-                [barChartLabels]="orderChartLabels"
-                [barChartData]="orderChartData"
-              ></app-chart>
-            </div>
-            <div class="card-body">
-              <h4 class="card-title">Total orders</h4>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">access_time</i> updated 4 minutes ago
-              </div>
-            </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card card-chart">
+          <div class="card-header card-header-warning">
+            <app-chart [barChartLabels]="orderChartLabels"
+              [barChartData]="orderChartData"></app-chart>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Total orders</h4>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card card-chart">
-            <div class="card-header card-header-success">
-              <app-chart
-                [barChartLabels]="billChartLabels"
-                [barChartData]="billChartData"
-              ></app-chart>
-            </div>
-            <div class="card-body">
-              <h4 class="card-title">Total bills</h4>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">access_time</i> updated 4 minutes ago
-              </div>
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-chart">
+          <div class="card-header card-header-success">
+            <app-chart [barChartLabels]="billChartLabels"
+              [barChartData]="billChartData"></app-chart>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Total bills</h4>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<footer class="footer ">
+  <div class="container-fluid">
+    <div class="copyright pull-right">
+      &copy;
+      {{test | date: 'yyyy'}}, made with
+      <i class="material-icons">favorite</i>
+      by
+      <a href="#">Squadron Books</a> for a better web.
+    </div>
+  </div>
+</footer>
