@@ -1,5 +1,7 @@
+<div class="main-content mt-3 min-vh-100">
+<div class="container-fluid">
 <div class="row">
-    <div *ngIf="bill" class="col-6 offset-3 mt-5">
+    <div *ngIf="bill" class="col-6 offset-3">
         <form #billForm="ngForm" (ngSubmit)="setBillToDatabase(bill)">
             <div *ngIf="!updating" class="form-group">
                 <h2 *ngIf="bill.id==0" class="card-title mb-5">Create new bill</h2>
@@ -47,14 +49,16 @@
                 </div>
             </div>
 
-            <div *ngIf="billForm.invalid" class="alert alert-warning text-center" role="alert">
+            <div *ngIf="billForm.invalid" class="alert alert-warning text-center mt-2" role="alert">
                 All fields need to be filled!
             </div>
 
-            <button [disabled]="billForm.invalid || updating" type="submit" class="btn btn-block btn-info">
+            <button [disabled]="billForm.invalid || updating" type="submit" class="btn btn-block btn-info mb-5">
                 <i *ngIf="!updating" class="fa fa-save"></i>
                 <i *ngIf="updating" class="fa fa-refresh"></i>
             </button>
         </form>
     </div>
+</div>
+</div>
 </div>
