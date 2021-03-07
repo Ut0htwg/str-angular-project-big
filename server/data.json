@@ -501,6 +501,18 @@
       "active": true
     }
   ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "History",
+      "description": "Fusce cursus vestibulum lacinia. In facilisis tincidunt sagittis. Aenean luctus urna magna, nec commodo ante malesuada laoreet."
+    },
+    {
+      "id": 2,
+      "name": "Literature",
+      "description": "Mauris sapien elit, pulvinar a efficitur vel, cursus sit amet lacus. Integer tempus metus vitae libero laoreet pretium venenatis et turpis."
+    }
+  ],
   "bills": [
     {
       "id": 1,
