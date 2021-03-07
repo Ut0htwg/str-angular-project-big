@@ -1,7 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-//import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label, Color } from 'ng2-charts';
 import { bufferToggle } from 'rxjs/operators';
 
