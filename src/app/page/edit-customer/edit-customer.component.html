@@ -1,0 +1,143 @@
+<div class="main-content mt-3 min-vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div *ngIf="customer" class="col-6 offset-3">
+        <form #customerForm="ngForm"
+          (ngSubmit)="setCustomerToDatabase(customer)">
+          <div *ngIf="!updating" class="form-group">
+            <h2 *ngIf="customer.id==0" class="card-title mb-5">Create new
+              customer</h2>
+            <h2 *ngIf="customer.id!=0" class="card-title mb-5">Edit customer
+            </h2>
+            <label for="customer">#</label>
+            <input [(ngModel)]="customer.id" id="customer" name="customer"
+              type="number" class="form-control" disabled>
+          </div>
+
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input name="firstName" [(ngModel)]="customer.firstName" type="text"
+              class="form-control pl-3"
+              pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí]{1,}$" required>
+
+            <div [hidden]="
+            customerForm.controls.firstName?.valid ||
+            customerForm.controls.firstName?.pristine
+          " class="error-message">
+              You must enter a valid first name.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input name="lastName" [(ngModel)]="customer.lastName" type="text"
+              class="form-control pl-3"
+              pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí]{1,}$" required>
+
+            <div [hidden]="
+            customerForm.controls.lastName?.valid ||
+            customerForm.controls.lastName?.pristine
+          " class="error-message">
+              You must enter a valid last name.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input name="email" [(ngModel)]="customer.email" type="email"
+              class="form-control pl-3"
+              pattern="^[a-z0-9.-_]{2,}@{1}[a-z0-9.-]{2,}\.{1}[a-z]{2,4}$"
+              required>
+
+            <div [hidden]="
+            customerForm.controls.email?.valid ||
+            customerForm.controls.email?.pristine
+          " class="error-message">
+              You must enter a valid e-mail address.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input name="zip" [(ngModel)]="customer.address.zip" type="number"
+              class="form-control pl-3" pattern="[0-9]{4,}"
+              placeholder="ZIP or postal code" required>
+
+            <div [hidden]="
+            customerForm.controls.zip?.valid ||
+            customerForm.controls.zip?.pristine
+          " class="error-message">
+              ZIP code must be minimum 4 characters and contains only numbers.
+            </div>
+
+            <input name="country" [(ngModel)]="customer.address.country"
+              type="text" class="form-control pl-3"
+              pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí -]{1,}$"
+              placeholder="Country" required>
+            <div [hidden]="
+            customerForm.controls.country?.valid ||
+            customerForm.controls.country?.pristine
+          " class="error-message">
+              Country must be minimum 2 characters and starts with a capital
+              letter.
+            </div>
+
+            <input name="city" [(ngModel)]="customer.address.city" type="text"
+              class="form-control pl-3"
+              pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí -]{1,}$"
+              placeholder="City" required>
+            <div [hidden]="
+            customerForm.controls.city?.valid ||
+            customerForm.controls.city?.pristine
+          " class="error-message">
+              City must be minimum 2 characters and starts with a capital
+              letter.
+            </div>
+
+            <input name="street" [(ngModel)]="customer.address.street"
+              type="text" class="form-control pl-3"
+              pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}.{7,}$" placeholder="Street" required>
+            <div [hidden]="
+            customerForm.controls.street?.valid ||
+            customerForm.controls.street?.pristine
+          " class="error-message">
+              Street must be minimum 8 characters and starts with a capital
+              letter.
+            </div>
+
+            <textarea name="notes" [(ngModel)]="customer.address.notes"
+              class="form-control pl-3" placeholder="Notes" rows="5"
+              pattern="[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí., -]{1,}" required></textarea>
+            <div [hidden]="
+          customerForm.controls.notes?.valid ||
+          customerForm.controls.street?.pristine
+        " class="error-message">
+              This field needs to be filled.
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label class="form-check-label mt-3 mb-5 ml-2">
+              <input class="form-check-input" type="checkbox" name="active"
+                [(ngModel)]="customer.active">Active
+              <span class="form-check-sign">
+                <span class="check"></span>
+              </span>
+            </label>
+          </div>
+
+          <div *ngIf="customerForm.invalid"
+            class="alert alert-warning text-center mt-2" role="alert">
+            All fields need to be filled!
+          </div>
+
+          <button [disabled]="customerForm.invalid || updating" type="submit"
+            class="btn btn-block btn-info mb-5">
+            <i *ngIf="!updating" class="fa fa-save"></i>
+            <i *ngIf="updating" class="fa fa-refresh"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

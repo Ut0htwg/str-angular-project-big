@@ -1,0 +1,64 @@
+<div class="main-content mt-3 min-vh-100">
+<div class="container-fluid">
+<div class="row">
+    <div *ngIf="bill" class="col-6 offset-3">
+        <form #billForm="ngForm" (ngSubmit)="setBillToDatabase(bill)">
+            <div *ngIf="!updating" class="form-group">
+                <h2 *ngIf="bill.id==0" class="card-title mb-5">Create new bill</h2>
+                <h2 *ngIf="bill.id!=0" class="card-title mb-5">Edit bill</h2>
+                <label for="bill">#</label>
+                <input [(ngModel)]="bill.id" id="bill" name="bill" type="number" class="form-control" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="order">OrderID</label>
+                <input name="order" [(ngModel)]="bill.orderID" type="number" class="form-control"
+                    pattern="^[1-9][0-9]{0,}" required>
+
+                <div [hidden]="billForm.controls.order?.valid || billForm.controls.order?.pristine"
+                    class="error-message">
+                    The order ID needs to be filled. It must contain only numbers.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input name="amount" [(ngModel)]="bill.amount" type="number" class="form-control"
+                    pattern="^[1-9][0-9]{0,}" required>
+
+                <div [hidden]="billForm.controls.amount?.valid ||
+                billForm.controls.amount?.pristine" class="error-message">
+                    The order amount needs to be filled. It must contain only numbers.
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select [(ngModel)]="bill.status" class="form-control" style="cursor: pointer" id="status" name="status"
+                    pattern="^(new|paid)$" required>
+                    <option value="new">new</option>
+                    <option value="paid">paid</option>
+                </select>
+                
+                <div [hidden]="
+              billForm.controls.status?.valid ||
+              billForm.controls.status?.pristine
+            " class="error-message">
+                    You must select one of the types.
+                </div>
+            </div>
+
+            <div *ngIf="billForm.invalid" class="alert alert-warning text-center mt-2" role="alert">
+                All fields need to be filled!
+            </div>
+
+            <button [disabled]="billForm.invalid || updating" type="submit" class="btn btn-block btn-info mb-5">
+                <i *ngIf="!updating" class="fa fa-save"></i>
+                <i *ngIf="updating" class="fa fa-refresh"></i>
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+</div>

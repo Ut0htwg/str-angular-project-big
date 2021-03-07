@@ -1,0 +1,159 @@
+<div class="main-content mt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="d-flex mb-3 col-6 offset-6">
+        <div class="col-md-4">
+          <select [(ngModel)]="phraseKey" class="custom-select">
+            <option value="">find all</option>
+            <option *ngFor="let key of keyArray" [value]="key">
+              {{ key }}
+            </option>
+          </select>
+        </div>
+        <input
+          [(ngModel)]="txt"
+          class="form-control px-1"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </div>
+    </div>
+
+    <button [routerLink]="['' + 0]" class="btn btn-block btn-lg btn-info my-3">
+      <span class="material-icons mr-3"> add_task </span>
+      Create new bill
+    </button>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h2 class="card-title">Bills</h2>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="text-center">
+                  <th (click)="onColumnSelect('id')">
+                    #
+                    <i
+                      *ngIf="columnKey !== 'id'"
+                      class="material-icons align-text-bottom text-info"
+                      style="cursor: pointer"
+                      >indeterminate_check_box</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'id' && direction === 'asc'"
+                      class="material-icons align-text-top"
+                      style="cursor: pointer"
+                      >keyboard_arrow_down</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'id' && direction === 'dsc'"
+                      class="material-icons align-text-bottom"
+                      style="cursor: pointer"
+                      >keyboard_arrow_up</i
+                    >
+                  </th>
+                  <th (click)="onColumnSelect('orderID')">
+                    OrderID
+                    <i
+                      *ngIf="columnKey !== 'orderID'"
+                      class="material-icons align-text-bottom text-info"
+                      style="cursor: pointer"
+                      >indeterminate_check_box</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'orderID' && direction === 'asc'"
+                      class="material-icons align-text-top"
+                      style="cursor: pointer"
+                      >keyboard_arrow_down</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'orderID' && direction === 'dsc'"
+                      class="material-icons align-text-bottom"
+                      style="cursor: pointer"
+                      >keyboard_arrow_up</i
+                    >
+                  </th>
+                  <th (click)="onColumnSelect('amount')">
+                    Amount
+                    <i
+                      *ngIf="columnKey !== 'amount'"
+                      class="material-icons align-text-bottom text-info"
+                      style="cursor: pointer"
+                      >indeterminate_check_box</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'amount' && direction === 'asc'"
+                      class="material-icons align-text-top"
+                      style="cursor: pointer"
+                      >keyboard_arrow_down</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'amount' && direction === 'dsc'"
+                      class="material-icons align-text-bottom"
+                      style="cursor: pointer"
+                      >keyboard_arrow_up</i
+                    >
+                  </th>
+                  <th (click)="onColumnSelect('status')">
+                    Status
+                    <i
+                      *ngIf="columnKey !== 'status'"
+                      class="material-icons align-text-bottom text-info"
+                      style="cursor: pointer"
+                      >indeterminate_check_box</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'status' && direction === 'asc'"
+                      class="material-icons align-text-top"
+                      style="cursor: pointer"
+                      >keyboard_arrow_down</i
+                    >
+                    <i
+                      *ngIf="columnKey === 'status' && direction === 'dsc'"
+                      class="material-icons align-text-bottom"
+                      style="cursor: pointer"
+                      >keyboard_arrow_up</i
+                    >
+                  </th>
+                  <th>Actions</th>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let bill of billList$
+                        | async
+                        | filter: txt:phraseKey
+                        | sorter: direction:columnKey
+                    "
+                  >
+                    <td class="text-center">{{ bill.id }}</td>
+                    <td class="text-center">{{ bill.orderID }}</td>
+                    <td class="text-center">{{ bill.amount }}</td>
+                    <td class="text-center">{{ bill.status }}</td>
+                    <td class="text-center">
+                      <div class="btn-group">
+                        <button
+                          [routerLink]="[bill.id]"
+                          class="btn btn-success"
+                        >
+                          <i class="material-icons">edit</i>
+                        </button>
+                        <button class="btn btn-danger" (click)="onRemove(bill)">
+                          <i class="material-icons">delete_forever</i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

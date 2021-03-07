@@ -1,0 +1,132 @@
+<div class="main-content mt-3 min-vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngIf="product" class="col-6 offset-3">
+                <form #productForm="ngForm"
+                    (ngSubmit)="setProductToDatabase(product)">
+                    <div *ngIf="!updating" class="form-group">
+                        <h2 *ngIf="product.id==0" class="card-title mb-5">Create
+                            new product</h2>
+                        <h2 *ngIf="product.id!=0" class="card-title mb-5">Edit
+                            product</h2>
+                        <label for="product">#</label>
+                        <input [(ngModel)]="product.id" id="product"
+                            name="product" type="number" class="form-control"
+                            disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input name="name" [(ngModel)]="product.name"
+                            type="text" class="form-control"
+                            pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí., -]{3,}$"
+                            required>
+
+                        <div [hidden]="
+              productForm.controls.name?.valid ||
+              productForm.controls.name?.pristine
+            " class="error-message">
+                            Name must be minimum 4 characters and starts with a
+                            capital letter.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select [(ngModel)]="product.type" class="form-control"
+                            style="cursor: pointer" id="type" name="type"
+                            pattern="^(biographical|fiction)$" required>
+                            <option value="biographical">biographical</option>
+                            <option value="fiction">fiction</option>
+                        </select>
+
+                        <div [hidden]="
+          productForm.controls.type?.valid ||
+          productForm.controls.type?.pristine
+        " class="error-message">
+                            You must select one of the types.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="catID">CatID</label>
+                        <input [(ngModel)]="product.catID" id="catID"
+                            name="catID" type="number" class="form-control"
+                            required pattern="^[1-9]\d?" required>
+
+                        <div [hidden]="
+          productForm.controls.catID?.valid ||
+          productForm.controls.catID?.pristine
+        " class="error-message">
+                            The category ID needs to be filled. It must contain
+                            only numbers.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description"
+                            [(ngModel)]="product.description"
+                            class="form-control" rows="5"
+                            pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí., -]{3,}$"
+                            required></textarea>
+
+                        <div [hidden]="
+              productForm.controls.description?.valid ||
+              productForm.controls.description?.pristine
+            " class="error-message">
+                            Description must be minimum 4 characters and starts
+                            with a capital letter.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">price</label>
+                        <input name="price" [(ngModel)]="product.price"
+                            type="number" class="form-control" required>
+                        <div [hidden]="productForm.controls.price?.valid || productForm.controls.price?.pristine"
+                            class="error-message">
+                            The price field needs to be filled. It must contain
+                            only numbers.
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label mt-3">
+                            <input class="form-check-input" type="checkbox"
+                                name="featured"
+                                [(ngModel)]="product.featured">Featured
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label mb-5">
+                            <input class="form-check-input" type="checkbox"
+                                name="active"
+                                [(ngModel)]="product.active">Active
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div *ngIf="productForm.invalid"
+                        class="alert alert-warning text-center mt-27"
+                        role="alert">
+                        All fields need to be filled!
+                    </div>
+
+                    <button [disabled]="productForm.invalid || updating"
+                        type="submit" class="btn btn-block btn-info mb-5">
+                        <i *ngIf="!updating" class="fa fa-save"></i>
+                        <i *ngIf="updating" class="fa fa-refresh"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
