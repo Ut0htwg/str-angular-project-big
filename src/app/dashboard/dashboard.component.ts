@@ -33,7 +33,6 @@ export class DashboardComponent implements OnInit {
   billChartData: ChartDataSets[] = [
     { data: [0], label: "Bills"}
   ]
-  test : Date = new Date();
 
   constructor(
     private productService: ProductService,
