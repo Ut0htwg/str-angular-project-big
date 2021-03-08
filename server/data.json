@@ -518,175 +518,204 @@
       "id": 1,
       "orderID": 1,
       "amount": 1523,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-01T09:48:52.174Z"
     },
     {
       "id": 2,
       "orderID": 2,
       "amount": 8654,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-01T09:48:52.174Z"
     },
     {
       "id": 3,
       "orderID": 3,
       "amount": 6574,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-01T09:48:52.174Z"
     },
     {
       "id": 4,
       "orderID": 4,
       "amount": 25678,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-01T09:48:52.174Z"
     },
     {
       "id": 5,
       "orderID": 5,
       "amount": 3574,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 6,
       "orderID": 6,
       "amount": 65245,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-02T09:48:52.174Z"
     },
     {
       "id": 7,
       "orderID": 7,
       "amount": 43850,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-02T09:48:52.174Z"
     },
     {
       "id": 8,
       "orderID": 8,
       "amount": 45212,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-02T09:48:52.174Z"
     },
     {
       "id": 9,
       "orderID": 9,
       "amount": 8745,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-02T09:48:52.174Z"
     },
     {
       "id": 10,
       "orderID": 10,
       "amount": 12458,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-02T09:48:52.174Z"
     },
     {
       "id": 11,
       "orderID": 11,
       "amount": 25140,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-03T09:48:52.174Z"
     },
     {
       "id": 12,
       "orderID": 12,
       "amount": 35478,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-03T09:48:52.174Z"
     },
     {
       "id": 13,
       "orderID": 13,
       "amount": 25471,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-03T09:48:52.174Z"
     },
     {
       "id": 14,
       "orderID": 14,
       "amount": 5980,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-04T09:48:52.174Z"
     },
     {
       "id": 15,
       "orderID": 15,
       "amount": 8480,
-      "status": "paid"
+      "status": "paid",
+      "datumPaid": "2021-03-04T09:48:52.174Z"
     },
     {
       "id": 16,
       "orderID": 16,
       "amount": 8261,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-04T09:48:52.174Z"
     },
     {
       "id": 17,
       "orderID": 17,
       "amount": 4490,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-05T09:48:52.174Z"
     },
     {
       "id": 18,
       "orderID": 18,
       "amount": 8710,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-05T09:48:52.174Z"
     },
     {
       "id": 19,
       "orderID": 19,
       "amount": 11620,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-05T09:48:52.174Z"
     },
     {
       "id": 20,
       "orderID": 20,
       "amount": 4360,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-05T09:48:52.174Z"
     },
     {
       "id": 21,
       "orderID": 21,
       "amount": 2610,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 22,
       "orderID": 22,
       "amount": 9630,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 23,
       "orderID": 23,
       "amount": 8060,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 24,
       "orderID": 24,
       "amount": 5750,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 25,
       "orderID": 25,
       "amount": 1260,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 26,
       "orderID": 26,
       "amount": 5620,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-06T09:48:52.174Z"
     },
     {
       "id": 27,
       "orderID": 27,
       "amount": 9840,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-07T09:48:52.174Z"
     },
     {
       "id": 28,
       "orderID": 28,
       "amount": 4050,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-07T09:48:52.174Z"
     },
     {
       "id": 29,
       "orderID": 29,
       "amount": 5280,
-      "status": "new"
+      "status": "new",
+      "datumPaid": "2021-03-07T09:48:52.174Z"
     }
   ],
   "orders": [
