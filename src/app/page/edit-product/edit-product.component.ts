@@ -53,7 +53,7 @@ export class EditProductComponent implements OnInit {
     return `${product.id}`;
   }
 
-  productIputFormatter(product: Product): string {
+  productInputFormatter(product: Product): string {
     if (!product.id) {
       return '';
     }

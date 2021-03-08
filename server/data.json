@@ -5,8 +5,7 @@
       "name": "Pellentesque eget nunc.",
       "type": "biographical",
       "catID": 1,
-      "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.",
-      "image": "../../assets/img/1.jpg",
+      "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
       "price": 4112,
       "featured": true,
       "active": true
@@ -17,7 +16,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
-      "image": "../../assets/img/2.jpg",
       "price": 6440,
       "featured": false,
       "active": true
@@ -28,7 +26,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
-      "image": "../../assets/img/3.jpg",
       "price": 2018,
       "featured": true,
       "active": true
@@ -39,7 +36,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.",
-      "image": "../../assets/img/4.jpg",
       "price": 6595,
       "featured": true,
       "active": true
@@ -50,7 +46,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
-      "image": "../../assets/img/5.jpg",
       "price": 1634,
       "featured": true,
       "active": true
@@ -61,7 +56,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-      "image": "../../assets/img/6.jpg",
       "price": "9387",
       "featured": true,
       "active": true
@@ -72,7 +66,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie.",
-      "image": "../../assets/img/7.jpg",
       "price": 5985,
       "featured": true,
       "active": true
@@ -83,7 +76,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros.",
-      "image": "../../assets/img/8.jpg",
       "price": 3010,
       "featured": true,
       "active": true
@@ -94,7 +86,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit erat.",
-      "image": "../../assets/img/9.jpg",
       "price": 7521,
       "featured": false,
       "active": true
@@ -105,7 +96,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
-      "image": "../../assets/img/10.jpg",
       "price": 7671,
       "featured": true,
       "active": true
@@ -116,7 +106,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede.",
-      "image": "../../assets/img/11.jpg",
       "price": 6963,
       "featured": true,
       "active": true
@@ -127,7 +116,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
-      "image": "../../assets/img/12.jpg",
       "price": 3041,
       "featured": false,
       "active": true
@@ -138,7 +126,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-      "image": "../../assets/img/13.jpg",
       "price": 7202,
       "featured": false,
       "active": true
@@ -149,7 +136,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
-      "image": "../../assets/img/14.jpg",
       "price": 9352,
       "featured": false,
       "active": true
@@ -160,7 +146,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu.",
-      "image": "../../assets/img/15.jpg",
       "price": 6283,
       "featured": false,
       "active": true
@@ -171,7 +156,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
-      "image": "../../assets/img/16.jpg",
       "price": 5896,
       "featured": true,
       "active": true
@@ -182,7 +166,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit",
-      "image": "../../assets/img/17.jpg",
       "price": 8679,
       "featured": false,
       "active": true
@@ -193,7 +176,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam",
-      "image": "../../assets/img/18.jpg",
       "price": 8866,
       "featured": true,
       "active": true
@@ -204,7 +186,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, ",
-      "image": "../../assets/img/19.jpg",
       "price": 7558,
       "featured": false,
       "active": true
@@ -215,7 +196,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id",
-      "image": "../../assets/img/20.jpg",
       "price": 1146,
       "featured": true,
       "active": true
@@ -226,7 +206,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
-      "image": "../../assets/img/21.jpg",
       "price": 4847,
       "featured": true,
       "active": true
@@ -237,7 +216,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
-      "image": "../../assets/img/22.jpg",
       "price": 5010,
       "featured": true,
       "active": true
@@ -248,7 +226,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non,",
-      "image": "../../assets/img/23.jpg",
       "price": 3864,
       "featured": true,
       "active": true
@@ -259,7 +236,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum",
-      "image": "../../assets/img/24.jpg",
       "price": 7616,
       "featured": true,
       "active": true
@@ -270,7 +246,6 @@
       "type": "fiction",
       "catID": 1,
       "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-      "image": "../../assets/img/25.jpg",
       "price": 8503,
       "featured": false,
       "active": true
@@ -281,7 +256,6 @@
       "type": "fiction",
       "catID": 2,
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices,",
-      "image": "../../assets/img/26.jpg",
       "price": 2468,
       "featured": false,
       "active": true
@@ -292,7 +266,6 @@
       "type": "fiction",
       "catID": 2,
       "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
-      "image": "../../assets/img/27.jpg",
       "price": 6052,
       "featured": true,
       "active": true
@@ -303,7 +276,6 @@
       "type": "fiction",
       "catID": 2,
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus",
-      "image": "../../assets/img/28.jpg",
       "price": 6218,
       "featured": true,
       "active": true
@@ -314,7 +286,6 @@
       "type": "fiction",
       "catID": 2,
       "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-      "image": "../../assets/img/29.jpg",
       "price": 8024,
       "featured": false,
       "active": true
@@ -325,7 +296,6 @@
       "type": "fiction",
       "catID": 2,
       "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
-      "image": "../../assets/img/30.jpg",
       "price": 1763,
       "featured": true,
       "active": false
@@ -336,7 +306,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
-      "image": "../../assets/img/31.jpg",
       "price": 6270,
       "featured": true,
       "active": true
@@ -347,7 +316,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu,",
-      "image": "../../assets/img/32.jpg",
       "price": 1799,
       "featured": true,
       "active": true
@@ -358,7 +326,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget,",
-      "image": "../../assets/img/33.jpg",
       "price": 4123,
       "featured": false,
       "active": true
@@ -369,7 +336,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non,",
-      "image": "../../assets/img/34.jpg",
       "price": 7826,
       "featured": true,
       "active": true
@@ -380,7 +346,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
-      "image": "../../assets/img/35.jpg",
       "price": 9430,
       "featured": true,
       "active": true
@@ -391,7 +356,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum.",
-      "image": "../../assets/img/36.jpg",
       "price": 3647,
       "featured": false,
       "active": true
@@ -402,7 +366,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque,",
-      "image": "../../assets/img/37.jpg",
       "price": 7803,
       "featured": true,
       "active": true
@@ -413,7 +376,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus",
-      "image": "../../assets/img/38.jpg",
       "price": 5946,
       "featured": true,
       "active": true
@@ -424,7 +386,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer",
-      "image": "../../assets/img/39.jpg",
       "price": 1896,
       "featured": true,
       "active": true
@@ -435,7 +396,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
-      "image": "../../assets/img/40.jpg",
       "price": 5087,
       "featured": false,
       "active": true
@@ -446,7 +406,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar",
-      "image": "../../assets/img/41.jpg",
       "price": 5343,
       "featured": true,
       "active": true
@@ -457,7 +416,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas",
-      "image": "../../assets/img/42.jpg",
       "price": 8456,
       "featured": false,
       "active": true
@@ -468,7 +426,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros.",
-      "image": "../../assets/img/43.jpg",
       "price": 5823,
       "featured": false,
       "active": true
@@ -479,7 +436,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
-      "image": "../../assets/img/44.jpg",
       "price": 9415,
       "featured": true,
       "active": true
@@ -490,7 +446,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed,",
-      "image": "../../assets/img/45.jpg",
       "price": 7126,
       "featured": true,
       "active": true
@@ -501,7 +456,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in",
-      "image": "../../assets/img/46.jpg",
       "price": 4918,
       "featured": true,
       "active": true
@@ -512,7 +466,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut.",
-      "image": "../../assets/img/47.jpg",
       "price": 9802,
       "featured": false,
       "active": true
@@ -523,7 +476,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
-      "image": "../../assets/img/48.jpg",
       "price": 5324,
       "featured": true,
       "active": true
@@ -534,7 +486,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes.",
-      "image": "../../assets/img/49.jpg",
       "price": 3078,
       "featured": true,
       "active": true
@@ -545,7 +496,6 @@
       "type": "biographical",
       "catID": 2,
       "description": "Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet.",
-      "image": "../../assets/img/50.jpg",
       "price": 6990,
       "featured": false,
       "active": true
@@ -1343,6 +1293,20 @@
         "city": "Budapest",
         "street": "Szép utca 32.",
         "notes": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy."
+      },
+      "active": true
+    },
+    {
+      "id": 30,
+      "firstName": "Ferenc",
+      "lastName": "Tardos",
+      "email": "tardosf@gmail.com",
+      "address": {
+        "zip": 1023,
+        "country": "Magyarország",
+        "city": "Budapest",
+        "street": "Váci utca 34.",
+        "notes": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit."
       },
       "active": true
     }

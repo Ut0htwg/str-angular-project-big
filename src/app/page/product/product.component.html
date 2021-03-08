@@ -140,27 +140,6 @@
                         >keyboard_arrow_up</i
                       >
                     </th>
-                    <!-- <th (click)="onColumnSelect('image')">
-                        Image
-                      <i
-                        *ngIf="columnKey !== 'image'"
-                        class="material-icons align-text-bottom text-info"
-                        style="cursor: pointer"
-                        >indeterminate_check_box</i
-                      >
-                      <i
-                        *ngIf="columnKey === 'image' && direction === 'asc'"
-                        class="material-icons align-text-top"
-                        style="cursor: pointer"
-                        >keyboard_arrow_down</i
-                      >
-                      <i
-                        *ngIf="columnKey === 'image' && direction === 'dsc'"
-                        class="material-icons align-text-bottom"
-                        style="cursor: pointer"
-                        >keyboard_arrow_up</i
-                      >
-                    </th> -->
                     <th (click)="onColumnSelect('price')">
                         Price
                       <i
@@ -240,7 +219,6 @@
                     <td class="text-center">{{ product.type }}</td>
                     <td class="text-center">{{ product.catID }}</td>
                     <td class="text-center">{{ product.description }}</td>
-                    <!-- <td class="text-center">{{ product.image }}</td> -->
                     <td class="text-center">{{ product.price }}</td>
                     <td class="text-center">{{ product.featured }}</td>
                     <td class="text-center">{{ product.active }}</td>

@@ -1,70 +1,97 @@
-<div class="row">
-    <div *ngIf="order" class="col-6 offset-3 mt-5">
-        <form #orderForm="ngForm" (ngSubmit)="setOrderToDatabase(order)">
-            <div *ngIf="!updating" class="form-group">
-                <h2 *ngIf="order.id==0" class="card-title mb-5">Create new order</h2>
-                <h2 *ngIf="order.id!=0" class="card-title mb-5">Edit order</h2>
-                <label for="order">#</label>
-                <input [(ngModel)]="order.id" id="order" name="order" type="number" class="form-control" disabled />
+<div class="main-content mt-3 min-vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngIf="order" class="col-6 offset-3">
+                <form #orderForm="ngForm"
+                    (ngSubmit)="setOrderToDatabase(order)">
+                    <div *ngIf="!updating" class="form-group">
+                        <h2 *ngIf="order.id==0" class="card-title mb-5">Create
+                            new order</h2>
+                        <h2 *ngIf="order.id!=0" class="card-title mb-5">Edit
+                            order</h2>
+                        <label for="order">#</label>
+                        <input [(ngModel)]="order.id" id="order" name="order"
+                            type="number" class="form-control" disabled>
+                    </div>
 
-            </div>
-            <div class="form-group">
+                    <div class="form-group">
+                        <label for="customer">customerID</label>
+                        <input [(ngModel)]="order.customerID" id="customer"
+                            name="customer" type="number" class="form-control"
+                            required pattern="[1-9]\d?">
 
-                <label for="customer">customerID</label>
-                <input [(ngModel)]="order.customerID" id="customer" name="customer" type="number" class="form-control"
-                    required pattern="[1-9]\d?" autofocus />
-
-                <div [hidden]="
+                        <div [hidden]="
               orderForm.controls.customer?.valid ||
               orderForm.controls.customer?.pristine
             " class="error-message">
-                    The customer ID needs to be filled. It can be maximum 2 characters and contains only numbers.
-                </div>
-            </div>
-            <div class="form-group">
+                            The customer ID needs to be filled. It can be
+                            maximum 2 characters and contains only numbers.
+                        </div>
+                    </div>
 
-                <label for="product">ProductID</label>
-                <input id="product" [(ngModel)]="order.productID" name="product" type="number" class="form-control"
-                    pattern="[1-9]\d?" required />
-                <div [hidden]="
+                    <div class="form-group">
+
+                        <label for="product">ProductID</label>
+                        <input id="product" [(ngModel)]="order.productID"
+                            name="product" type="number" class="form-control"
+                            pattern="[1-9]\d?" required>
+
+                        <div [hidden]="
               orderForm.controls.product?.valid ||
               orderForm.controls.product?.pristine
             " class="error-message">
-                    The product ID needs to be filled. It can be maximum 2 characters and contains only numbers.
-                </div>
-            </div>
-            <div class="form-group">
+                            The product ID needs to be filled. It can be maximum
+                            2 characters and contains only numbers.
+                        </div>
+                    </div>
 
-                <label for="amount">Amount</label>
-                <input [(ngModel)]="order.amount" id="amount" name="amount" type="number" class="form-control"
-                    pattern="[1-9]\d?\d?\d?\d?\d?" required />
-                <div [hidden]="
+                    <div class="form-group">
+
+                        <label for="amount">Amount</label>
+                        <input [(ngModel)]="order.amount" id="amount"
+                            name="amount" type="number" class="form-control"
+                            pattern="[1-9]\d?\d?\d?\d?\d?" required>
+
+                        <div [hidden]="
               orderForm.controls.amount?.valid ||
               orderForm.controls.amount?.pristine
             " class="error-message">
-                    The amount needs to be filled. It can be maximum 6 characters and contains only numbers.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="status">Status</label>
-                <select [(ngModel)]="order.status" class="form-control" style="cursor: pointer" id="status"
-                    name="status" pattern="^(new|shipped|paid)$" required>
-                    <option value="new">new</option>
-                    <option value="shipped">shipped</option>
-                    <option value="paid">paid</option>
-                </select>
+                            The amount needs to be filled. It can be maximum 6
+                            characters and contains only numbers.
+                        </div>
+                    </div>
 
-                <div [hidden]="
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select [(ngModel)]="order.status" class="form-control"
+                            style="cursor: pointer" id="status" name="status"
+                            pattern="^(new|shipped|paid)$" required>
+                            <option value="new">new</option>
+                            <option value="shipped">shipped</option>
+                            <option value="paid">paid</option>
+                        </select>
+
+                        <div [hidden]="
               orderForm.controls.status?.valid ||
               orderForm.controls.status?.pristine
             " class="error-message">
-                    You must select one of the types.
-                </div>
+                            You must select one of the types.
+                        </div>
+                    </div>
+
+                    <div *ngIf="orderForm.invalid"
+                        class="alert alert-warning text-center mt-2"
+                        role="alert">
+                        All fields need to be filled!
+                    </div>
+
+                    <button [disabled]="orderForm.invalid || updating"
+                        class="btn btn-block btn-info mb-5">
+                        <i *ngIf="!updating" class="fa fa-save"></i>
+                        <i *ngIf="updating" class="fa fa-refresh"></i>
+                    </button>
+                </form>
             </div>
-            <button [disabled]="orderForm.invalid || updating" class="btn btn-block btn-info">
-                <i *ngIf="!updating" class="fa fa-save"></i>
-                <i *ngIf="updating" class="fa fa-refresh"></i>
-            </button>
-        </form>
+        </div>
     </div>
 </div>
