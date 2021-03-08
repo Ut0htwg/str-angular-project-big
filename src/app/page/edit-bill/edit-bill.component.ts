@@ -75,6 +75,7 @@ export class EditBillComponent implements OnInit {
   }
 
   setBillToDatabase(bill: Bill): void {
+    bill.datumPaid = (new Date).toISOString();
     this.updating = true;
     bill.id = Number(bill.id);
     if (bill.id === 0) {
